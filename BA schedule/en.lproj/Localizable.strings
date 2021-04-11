@@ -1,0 +1,43 @@
+/* 
+  Localizable.strings
+  BA schedule
+
+  Created by Jonas Richard Richter on 20.03.21.
+  
+*/
+
+// General
+
+"app.title" = "Your schedule";
+"app.lastUpdate %@" = "Last update was: %@";
+
+
+// Settings
+
+"settings.label" = "Settings";
+"settings.editcred" = "Edit credentials";
+"settings.editcred.matrikel.label" = "Matricel number";
+"settings.editcred.hash.label" = "Hash";
+"settings.editcred.close.label" = "Close";
+"settings.about" = "About this app";
+"settings.calenderexport" = "Manage calender export";
+"about.opensource.label" = "Open Source libraries";
+
+// Onboarding
+"onboarding.title" = "Welcome to BA schedule";
+"onboarding.feature1.title" = "See your timetable";
+"onboarding.feature1.description" = "All your lectures quickly and compactly at a glance.";
+"onboarding.feature2.title" = "Calendar export";
+"onboarding.feature2.description" = "Export your lectures directly to your calendar.";
+"onboarding.feature3.title" = "Open Source";
+"onboarding.feature3.description" = "The source code can be found on GitHub.";
+"onboarding.privacy.text" = "Privacy is important. Therefore, all data is stored only locally and is not known to us.";
+"onboarding.privacy.learnmore" = "Learn more...";
+"onboarding.button.continue" = "Continue";
+"onboarding.addCred.title" = "Login with \nCampus Dual";
+"onboarding.addCred.matrikel.label" = "Matricel numer";
+"onboarding.addCred.hash.label" = "Hash";
+"onboarding.addCred.loginButton" = "Login";
+
+// privacy
+"privacy.headline" = "Privacy";

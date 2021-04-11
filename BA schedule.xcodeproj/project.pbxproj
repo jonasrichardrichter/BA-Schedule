@@ -3,23 +3,48 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4123FFB62623694E0019B39E /* PermissionsSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4123FFB52623694E0019B39E /* PermissionsSwiftUI */; };
+		418FE8A9260685C3007A39F9 /* CampusDualConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418FE8A8260685C3007A39F9 /* CampusDualConnect.swift */; };
+		418FE8AC2606882A007A39F9 /* EditCredentialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418FE8AB2606882A007A39F9 /* EditCredentialsView.swift */; };
+		418FE8B4260788C7007A39F9 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 418FE8B3260788C7007A39F9 /* SwiftyJSON */; };
 		41AF43BD26067DD300F8E218 /* BA_scheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AF43BC26067DD300F8E218 /* BA_scheduleApp.swift */; };
 		41AF43BF26067DD300F8E218 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AF43BE26067DD300F8E218 /* ContentView.swift */; };
 		41AF43C126067DD400F8E218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41AF43C026067DD400F8E218 /* Assets.xcassets */; };
 		41AF43C426067DD400F8E218 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41AF43C326067DD400F8E218 /* Preview Assets.xcassets */; };
+		41AF43CF26067E0F00F8E218 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AF43CD26067E0F00F8E218 /* LargeButton.swift */; };
+		41AF43D026067E0F00F8E218 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AF43CE26067E0F00F8E218 /* Feature.swift */; };
+		41AF43D926067ECE00F8E218 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41AF43DB26067ECE00F8E218 /* Localizable.strings */; };
+		41D8D73826092D510055091B /* ScheduleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D8D73726092D510055091B /* ScheduleListView.swift */; };
+		41E38C5626236EF300F06696 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 41E38C5526236EF300F06696 /* Settings.bundle */; };
+		41E38C5C2623803300F06696 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 41E38C5B2623803300F06696 /* KeychainSwift */; };
+		41F5000326093D4B00B01C2D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5000226093D4B00B01C2D /* OnboardingView.swift */; };
+		41F5000726093D8900B01C2D /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5000626093D8900B01C2D /* PrivacyView.swift */; };
+		41F5000A260A5E0E00B01C2D /* AddCredentialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F50009260A5E0E00B01C2D /* AddCredentialsView.swift */; };
+		41F5000E260A617500B01C2D /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5000D260A617500B01C2D /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		418FE8A8260685C3007A39F9 /* CampusDualConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusDualConnect.swift; sourceTree = "<group>"; };
+		418FE8AB2606882A007A39F9 /* EditCredentialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCredentialsView.swift; sourceTree = "<group>"; };
 		41AF43B926067DD300F8E218 /* BA schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BA schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AF43BC26067DD300F8E218 /* BA_scheduleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BA_scheduleApp.swift; sourceTree = "<group>"; };
 		41AF43BE26067DD300F8E218 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		41AF43C026067DD400F8E218 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41AF43C326067DD400F8E218 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		41AF43C526067DD400F8E218 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41AF43CD26067E0F00F8E218 /* LargeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
+		41AF43CE26067E0F00F8E218 /* Feature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
+		41AF43DA26067ECE00F8E218 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		41D8D73726092D510055091B /* ScheduleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListView.swift; sourceTree = "<group>"; };
+		41E38C5526236EF300F06696 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		41F5000226093D4B00B01C2D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		41F5000626093D8900B01C2D /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
+		41F50009260A5E0E00B01C2D /* AddCredentialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCredentialsView.swift; sourceTree = "<group>"; };
+		41F5000D260A617500B01C2D /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +52,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41E38C5C2623803300F06696 /* KeychainSwift in Frameworks */,
+				4123FFB62623694E0019B39E /* PermissionsSwiftUI in Frameworks */,
+				418FE8B4260788C7007A39F9 /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +64,7 @@
 		41AF43B026067DD300F8E218 = {
 			isa = PBXGroup;
 			children = (
+				41E38C5526236EF300F06696 /* Settings.bundle */,
 				41AF43BB26067DD300F8E218 /* BA schedule */,
 				41AF43BA26067DD300F8E218 /* Products */,
 			);
@@ -52,11 +81,17 @@
 		41AF43BB26067DD300F8E218 /* BA schedule */ = {
 			isa = PBXGroup;
 			children = (
+				41F5000126093D3C00B01C2D /* Onboarding */,
+				41D8D73626092D3E0055091B /* Schedule */,
+				41AF43DF26067F6900F8E218 /* Settings */,
+				41AF43CC26067DF100F8E218 /* UI Elements */,
 				41AF43BC26067DD300F8E218 /* BA_scheduleApp.swift */,
 				41AF43BE26067DD300F8E218 /* ContentView.swift */,
 				41AF43C026067DD400F8E218 /* Assets.xcassets */,
 				41AF43C526067DD400F8E218 /* Info.plist */,
+				41AF43DB26067ECE00F8E218 /* Localizable.strings */,
 				41AF43C226067DD400F8E218 /* Preview Content */,
+				418FE8A8260685C3007A39F9 /* CampusDualConnect.swift */,
 			);
 			path = "BA schedule";
 			sourceTree = "<group>";
@@ -69,6 +104,50 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		41AF43CC26067DF100F8E218 /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				41AF43CE26067E0F00F8E218 /* Feature.swift */,
+				41AF43CD26067E0F00F8E218 /* LargeButton.swift */,
+			);
+			path = "UI Elements";
+			sourceTree = "<group>";
+		};
+		41AF43DF26067F6900F8E218 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				41F50010260A639000B01C2D /* About */,
+				418FE8AB2606882A007A39F9 /* EditCredentialsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		41D8D73626092D3E0055091B /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				41D8D73726092D510055091B /* ScheduleListView.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		41F5000126093D3C00B01C2D /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				41F5000226093D4B00B01C2D /* OnboardingView.swift */,
+				41F5000626093D8900B01C2D /* PrivacyView.swift */,
+				41F50009260A5E0E00B01C2D /* AddCredentialsView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		41F50010260A639000B01C2D /* About */ = {
+			isa = PBXGroup;
+			children = (
+				41F5000D260A617500B01C2D /* AboutView.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -79,12 +158,19 @@
 				41AF43B526067DD300F8E218 /* Sources */,
 				41AF43B626067DD300F8E218 /* Frameworks */,
 				41AF43B726067DD300F8E218 /* Resources */,
+				41AF43D326067E7200F8E218 /* Increment build number */,
+				4123FFB826236A270019B39E /* LicensePlist */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "BA schedule";
+			packageProductDependencies = (
+				418FE8B3260788C7007A39F9 /* SwiftyJSON */,
+				4123FFB52623694E0019B39E /* PermissionsSwiftUI */,
+				41E38C5B2623803300F06696 /* KeychainSwift */,
+			);
 			productName = "BA schedule";
 			productReference = 41AF43B926067DD300F8E218 /* BA schedule.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +198,11 @@
 				Base,
 			);
 			mainGroup = 41AF43B026067DD300F8E218;
+			packageReferences = (
+				418FE8B2260788C7007A39F9 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				4123FFB42623694E0019B39E /* XCRemoteSwiftPackageReference "PermissionsSwiftUI" */,
+				41E38C5A2623803300F06696 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+			);
 			productRefGroup = 41AF43BA26067DD300F8E218 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,24 +217,85 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41E38C5626236EF300F06696 /* Settings.bundle in Resources */,
 				41AF43C426067DD400F8E218 /* Preview Assets.xcassets in Resources */,
+				41AF43D926067ECE00F8E218 /* Localizable.strings in Resources */,
 				41AF43C126067DD400F8E218 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4123FFB826236A270019B39E /* LicensePlist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = LicensePlist;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\ncd $SRCROOT\n/usr/local/bin/license-plist --output-path \"Settings.bundle\" --markdown-path \"ACKNOWLEDGES.md\" --force\nfi\n";
+		};
+		41AF43D326067E7200F8E218 /* Increment build number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Increment build number";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		41AF43B526067DD300F8E218 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41AF43D026067E0F00F8E218 /* Feature.swift in Sources */,
 				41AF43BF26067DD300F8E218 /* ContentView.swift in Sources */,
+				41F5000E260A617500B01C2D /* AboutView.swift in Sources */,
+				41F5000726093D8900B01C2D /* PrivacyView.swift in Sources */,
 				41AF43BD26067DD300F8E218 /* BA_scheduleApp.swift in Sources */,
+				418FE8AC2606882A007A39F9 /* EditCredentialsView.swift in Sources */,
+				41F5000A260A5E0E00B01C2D /* AddCredentialsView.swift in Sources */,
+				418FE8A9260685C3007A39F9 /* CampusDualConnect.swift in Sources */,
+				41F5000326093D4B00B01C2D /* OnboardingView.swift in Sources */,
+				41AF43CF26067E0F00F8E218 /* LargeButton.swift in Sources */,
+				41D8D73826092D510055091B /* ScheduleListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		41AF43DB26067ECE00F8E218 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41AF43DA26067ECE00F8E218 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		41AF43C626067DD400F8E218 /* Debug */ = {
@@ -272,15 +424,16 @@
 				DEVELOPMENT_TEAM = FAEXU5NUQ2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "BA schedule/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "eu.jonasrichter.BA-schedule";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -294,15 +447,16 @@
 				DEVELOPMENT_TEAM = FAEXU5NUQ2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "BA schedule/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "eu.jonasrichter.BA-schedule";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -328,6 +482,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4123FFB42623694E0019B39E /* XCRemoteSwiftPackageReference "PermissionsSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jevonmao/PermissionsSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.1;
+			};
+		};
+		418FE8B2260788C7007A39F9 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		41E38C5A2623803300F06696 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 19.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4123FFB52623694E0019B39E /* PermissionsSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4123FFB42623694E0019B39E /* XCRemoteSwiftPackageReference "PermissionsSwiftUI" */;
+			productName = PermissionsSwiftUI;
+		};
+		418FE8B3260788C7007A39F9 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 418FE8B2260788C7007A39F9 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		41E38C5B2623803300F06696 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41E38C5A2623803300F06696 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 41AF43B126067DD300F8E218 /* Project object */;
 }
