@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4123FFB62623694E0019B39E /* PermissionsSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4123FFB52623694E0019B39E /* PermissionsSwiftUI */; };
 		418FE8A9260685C3007A39F9 /* CampusDualConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418FE8A8260685C3007A39F9 /* CampusDualConnect.swift */; };
 		418FE8AC2606882A007A39F9 /* EditCredentialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418FE8AB2606882A007A39F9 /* EditCredentialsView.swift */; };
 		418FE8B4260788C7007A39F9 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 418FE8B3260788C7007A39F9 /* SwiftyJSON */; };
@@ -53,7 +52,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				41E38C5C2623803300F06696 /* KeychainSwift in Frameworks */,
-				4123FFB62623694E0019B39E /* PermissionsSwiftUI in Frameworks */,
 				418FE8B4260788C7007A39F9 /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,7 +166,6 @@
 			name = "BA schedule";
 			packageProductDependencies = (
 				418FE8B3260788C7007A39F9 /* SwiftyJSON */,
-				4123FFB52623694E0019B39E /* PermissionsSwiftUI */,
 				41E38C5B2623803300F06696 /* KeychainSwift */,
 			);
 			productName = "BA schedule";
@@ -200,7 +197,6 @@
 			mainGroup = 41AF43B026067DD300F8E218;
 			packageReferences = (
 				418FE8B2260788C7007A39F9 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				4123FFB42623694E0019B39E /* XCRemoteSwiftPackageReference "PermissionsSwiftUI" */,
 				41E38C5A2623803300F06696 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 41AF43BA26067DD300F8E218 /* Products */;
@@ -484,14 +480,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4123FFB42623694E0019B39E /* XCRemoteSwiftPackageReference "PermissionsSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jevonmao/PermissionsSwiftUI";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.4.1;
-			};
-		};
 		418FE8B2260788C7007A39F9 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
@@ -511,11 +499,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4123FFB52623694E0019B39E /* PermissionsSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4123FFB42623694E0019B39E /* XCRemoteSwiftPackageReference "PermissionsSwiftUI" */;
-			productName = PermissionsSwiftUI;
-		};
 		418FE8B3260788C7007A39F9 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 418FE8B2260788C7007A39F9 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
