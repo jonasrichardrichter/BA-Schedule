@@ -79,7 +79,7 @@ public class CampusDualConnect: ObservableObject {
         
         let session = URLSession(configuration: .default)
         
-        session.downloadTask(with: lessonsJsonUrl as URL) { localURL, urlResponse, error in
+        session.downloadTask(with: lessonsJsonUrl as URL) { localURL, _, _ in
             if let localURL = localURL {
                     if let json = try? String(contentsOf: localURL) {
                         let fileManager: FileManager = FileManager()
