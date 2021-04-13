@@ -13,7 +13,12 @@ This is a simple application to see your schedule from the Berufsakademie Sachse
 
 ## Download
 
-Coming soon to TestFlight!
+**This is an beta version!** 
+
+Please note the important informations in the BETA_NOTES.md file.
+
+[Download on TestFlight](https://testflight.apple.com/join/xN0e9jND)
+
 
 ## Acknowledgments
 
