@@ -177,23 +177,18 @@ public class CampusDualConnect: ObservableObject {
     public func getTimeTable() {
         
         // Check when the last update happend to reduce calls to Campus Dual
+        
         if lastUpdate != nil {
-            if let lastUpdateDate = dateFormatter.date(from: lastUpdate!){
-                if Calendar.current.isDateInYesterday(lastUpdateDate) {
-                    print("LOG: Last update is away more than yesterday, downloading new.")
-                    downloadJson()
-                } else if Calendar.current.isDateInToday(lastUpdateDate) {
-                    print("LOG: Last update is within yesterday, skipping auto-update")
-                    
-                    // Parse JSON from file
+            if let lastUpdateDate = dateFormatter.date(from: lastUpdate!) {
+                if Calendar.current.isDateInToday(lastUpdateDate) {
+                    print("LOG: Last update was today, skipping auto-update")
                     parseJson()
                 } else {
-                    print("LOG: Last update is away more than yesterday, downloading new.")
+                    print("LOG: Last update wasn't today, downloading new.")
                     downloadJson()
                 }
             } else {
                 print("ERROR: Couldn't convert lastUpdate string to Date")
-                
                 downloadJson()
             }
         } else {
