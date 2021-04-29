@@ -36,6 +36,16 @@ public struct Lesson: Codable, Hashable {
         
         return "\(startTime) - \(endTime)"
     }
+    
+    public func getDay() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .full
+        dateFormatter.timeStyle = .none
+        
+        let day = dateFormatter.string(from: NSDate.init(timeIntervalSince1970: TimeInterval(start)) as Date)
+        
+        return day
+    }
 }
 
 public struct StudyDay: Codable, Hashable {
@@ -116,7 +126,7 @@ public class CampusDualConnect: ObservableObject {
         
         guard let url = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("lessons.txt") else { return }
         
-        let jsonData:Data
+        let jsonData: Data
     
         do {
             jsonData = try Data(contentsOf: url)
@@ -129,10 +139,14 @@ public class CampusDualConnect: ObservableObject {
             let json = try JSON(data: jsonData)
             for (index,_):(String, JSON) in json {
                 DispatchQueue.main.async {
-                    let IntIndex = Int(index)!
-                    let jsonLesson = Lesson.init(title: json[IntIndex]["title"].string ?? "", start: json[IntIndex]["start"].int ?? 0, end: json[IntIndex]["end"].int ?? 0, description: json[IntIndex]["description"].string ?? "", room: json[IntIndex]["room"].string ?? "", instructor: json[IntIndex]["instructor"].string ?? "")
-                    print("LOG: Created new lesson: \(jsonLesson)")
-                    self.lessonsUnsorted.append(jsonLesson)
+                    let intIndex = Int(index)!
+                    if self.isLessonInFuture(startTime: json[intIndex]["start"].int ?? 0) {
+                        let jsonLesson = Lesson.init(title: json[intIndex]["title"].string ?? "", start: json[intIndex]["start"].int ?? 0, end: json[intIndex]["end"].int ?? 0, description: json[intIndex]["description"].string ?? "", room: json[intIndex]["room"].string ?? "", instructor: json[intIndex]["instructor"].string ?? "")
+                        print("LOG: Created new lesson: \(jsonLesson)")
+                        self.lessonsUnsorted.append(jsonLesson)
+                    } else {
+                        print("LOG: Skipped lesson.")
+                    }
                 }
             }
         } catch {
@@ -146,6 +160,20 @@ public class CampusDualConnect: ObservableObject {
         
     }
     
+    func isLessonInFuture(startTime: Int) -> Bool {
+        print("LOG: Trying to parse startTime: \(startTime)")
+        let startDate: Date = NSDate.init(timeIntervalSince1970: TimeInterval(startTime)) as Date
+        print("LOG: Start time of the lesson is: \(startDate)")
+        
+        if Calendar.current.isDateInToday(startDate) || Date() < startDate {
+            print("LOG: Lesson is in the future.")
+            return true
+        } else {
+            print("LOG: Lesson is in the past. Skipping lesson creation.")
+            return false
+        }
+    }
+    
     public func getTimeTable() {
         
         // Check when the last update happend to reduce calls to Campus Dual
@@ -154,11 +182,14 @@ public class CampusDualConnect: ObservableObject {
                 if Calendar.current.isDateInYesterday(lastUpdateDate) {
                     print("LOG: Last update is away more than yesterday, downloading new.")
                     downloadJson()
-                } else {
+                } else if Calendar.current.isDateInToday(lastUpdateDate) {
                     print("LOG: Last update is within yesterday, skipping auto-update")
                     
                     // Parse JSON from file
                     parseJson()
+                } else {
+                    print("LOG: Last update is away more than yesterday, downloading new.")
+                    downloadJson()
                 }
             } else {
                 print("ERROR: Couldn't convert lastUpdate string to Date")
