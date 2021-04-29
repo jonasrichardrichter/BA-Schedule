@@ -1,6 +1,6 @@
 # Important information for the beta use
 
-The current beta version is **0.1**
+The current beta version is **0.1.1**
 
 The version represants an early proof of concept build. The main functions are working but there is no error handling currently.
 
@@ -32,7 +32,7 @@ Now the app should work and be able to retrieve your timetable!
 
 # GERMAN
 
-Die aktuelle Beta-Version ist **0.1**.
+Die aktuelle Beta-Version ist **0.1.1**.
 
 Die Version stellt einen frühen Proof-of-Concept-Build dar. Die Hauptfunktionen sind funktionsfähig, aber es gibt derzeit keine Fehlerbehandlung.
 
