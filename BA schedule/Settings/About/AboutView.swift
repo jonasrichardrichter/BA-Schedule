@@ -25,7 +25,7 @@ struct AboutView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 120)
                         .cornerRadius(30)
-                    Text("BA schedule")
+                    Text("BA-Schedule")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                     Text("\(version) (\(buildNumber))")

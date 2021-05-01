@@ -24,7 +24,7 @@
 "about.opensource.label" = "Open Source libraries";
 
 // Onboarding
-"onboarding.title" = "Welcome to BA schedule";
+"onboarding.title" = "Welcome to BA-Schedule";
 "onboarding.feature1.title" = "See your timetable";
 "onboarding.feature1.description" = "All your lectures quickly and compactly at a glance.";
 "onboarding.feature2.title" = "Calendar export";
