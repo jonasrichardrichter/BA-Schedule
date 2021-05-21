@@ -37,14 +37,4 @@ public struct Lesson: Codable, Hashable {
         
         return dateFormatter.string(from: NSDate.init(timeIntervalSince1970: TimeInterval(end)) as Date)
     }
-    
-    public func getDay() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .full
-        dateFormatter.timeStyle = .none
-        
-        let day = dateFormatter.string(from: NSDate.init(timeIntervalSince1970: TimeInterval(start)) as Date)
-        
-        return day
-    }
 }
