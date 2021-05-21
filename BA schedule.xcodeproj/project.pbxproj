@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41029B6026580CBA00FDF0D0 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41029B5F26580CBA00FDF0D0 /* Lesson.swift */; };
+		41029B6226580CE000FDF0D0 /* StudyDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41029B6126580CE000FDF0D0 /* StudyDay.swift */; };
 		418FE8A9260685C3007A39F9 /* CampusDualConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418FE8A8260685C3007A39F9 /* CampusDualConnect.swift */; };
 		418FE8AC2606882A007A39F9 /* EditCredentialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418FE8AB2606882A007A39F9 /* EditCredentialsView.swift */; };
 		418FE8B4260788C7007A39F9 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 418FE8B3260788C7007A39F9 /* SwiftyJSON */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41029B5F26580CBA00FDF0D0 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		41029B6126580CE000FDF0D0 /* StudyDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyDay.swift; sourceTree = "<group>"; };
 		418FE8A8260685C3007A39F9 /* CampusDualConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusDualConnect.swift; sourceTree = "<group>"; };
 		418FE8AB2606882A007A39F9 /* EditCredentialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCredentialsView.swift; sourceTree = "<group>"; };
 		41AF43B926067DD300F8E218 /* BA schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BA schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +63,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41029B5E26580C8B00FDF0D0 /* CampusDualConnect */ = {
+			isa = PBXGroup;
+			children = (
+				41029B6326580D0200FDF0D0 /* entity */,
+				418FE8A8260685C3007A39F9 /* CampusDualConnect.swift */,
+			);
+			path = CampusDualConnect;
+			sourceTree = "<group>";
+		};
+		41029B6326580D0200FDF0D0 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				41029B5F26580CBA00FDF0D0 /* Lesson.swift */,
+				41029B6126580CE000FDF0D0 /* StudyDay.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
 		41AF43B026067DD300F8E218 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +101,7 @@
 		41AF43BB26067DD300F8E218 /* BA schedule */ = {
 			isa = PBXGroup;
 			children = (
+				41029B5E26580C8B00FDF0D0 /* CampusDualConnect */,
 				41F5000126093D3C00B01C2D /* Onboarding */,
 				41D8D73626092D3E0055091B /* Schedule */,
 				41AF43DF26067F6900F8E218 /* Settings */,
@@ -89,7 +112,6 @@
 				41AF43C526067DD400F8E218 /* Info.plist */,
 				41AF43DB26067ECE00F8E218 /* Localizable.strings */,
 				41AF43C226067DD400F8E218 /* Preview Content */,
-				418FE8A8260685C3007A39F9 /* CampusDualConnect.swift */,
 			);
 			path = "BA schedule";
 			sourceTree = "<group>";
@@ -269,12 +291,14 @@
 				41AF43D026067E0F00F8E218 /* Feature.swift in Sources */,
 				41AF43BF26067DD300F8E218 /* ContentView.swift in Sources */,
 				41F5000E260A617500B01C2D /* AboutView.swift in Sources */,
+				41029B6026580CBA00FDF0D0 /* Lesson.swift in Sources */,
 				41F5000726093D8900B01C2D /* PrivacyView.swift in Sources */,
 				41AF43BD26067DD300F8E218 /* BA_scheduleApp.swift in Sources */,
 				418FE8AC2606882A007A39F9 /* EditCredentialsView.swift in Sources */,
 				41F5000A260A5E0E00B01C2D /* AddCredentialsView.swift in Sources */,
 				418FE8A9260685C3007A39F9 /* CampusDualConnect.swift in Sources */,
 				41F5000326093D4B00B01C2D /* OnboardingView.swift in Sources */,
+				41029B6226580CE000FDF0D0 /* StudyDay.swift in Sources */,
 				41AF43CF26067E0F00F8E218 /* LargeButton.swift in Sources */,
 				41D8D73826092D510055091B /* ScheduleListView.swift in Sources */,
 			);

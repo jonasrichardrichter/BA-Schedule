@@ -32,7 +32,7 @@ struct ScheduleListView: View {
                         }
                     }
                     Spacer()
-                    Text(lesson.getStartToEnd())
+                    Text(lesson.getStart() + " - " + lesson.getEnd())
                 }
             }
             Section {
