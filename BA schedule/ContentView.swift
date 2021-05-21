@@ -58,10 +58,9 @@ struct ContentView: View {
         .sheet(isPresented: $showOnboardingView) {
             OnboardingView()
         }
-        .background(EmptyView()
-                        .sheet(isPresented: $showAbout) {
+        .sheet(isPresented: $showAbout) {
                             AboutView()
-                        })
+        }
         
         .environmentObject(CDConnect)
     }
