@@ -10,49 +10,6 @@ import SwiftyJSON
 import SwiftUI
 import KeychainSwift
 
-public struct Lesson: Codable, Hashable {
-    public var  title: String
-    public var  start: Int
-    public var  end: Int
-    public var  description: String
-    public var  room: String
-    public var  instructor: String
-    
-    enum CodingKeys: String, CodingKey {
-        case title = "title"
-        case start = "start"
-        case end = "end"
-        case description = "description"
-        case room = "room"
-        case instructor = "instructor"
-    }
-    
-    public func getStartToEnd() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        
-        let startTime = dateFormatter.string(from: NSDate.init(timeIntervalSince1970: TimeInterval(start)) as Date)
-        let endTime = dateFormatter.string(from: NSDate.init(timeIntervalSince1970: TimeInterval(end)) as Date)
-        
-        return "\(startTime) - \(endTime)"
-    }
-    
-    public func getDay() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .full
-        dateFormatter.timeStyle = .none
-        
-        let day = dateFormatter.string(from: NSDate.init(timeIntervalSince1970: TimeInterval(start)) as Date)
-        
-        return day
-    }
-}
-
-public struct StudyDay: Codable, Hashable {
-    public var day: String
-    public var lessonsOfTheDay: [Lesson]
-}
-
 public class CampusDualConnect: ObservableObject {
     
     let keychain = KeychainSwift()
@@ -62,7 +19,7 @@ public class CampusDualConnect: ObservableObject {
     let dateFormatter = DateFormatter()
     
     @Published var lessonsUnsorted: [Lesson] = []
-    @Published var lessonsSortedByDay: [StudyDay] = []
+    @Published var studyDays: [StudyDay] = []
     
     init() {
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss Z"
@@ -153,14 +110,21 @@ public class CampusDualConnect: ObservableObject {
             print(error)
         }
         
+        self.sortLessonsByStudyDay()
+        
     }
     
-    #warning("Build function to sort Lessons by Day")
-    func sortLessonsByDay() {
+    func sortLessonsByStudyDay() {
+        
+        // Sorts all lessons by day into StudyDays
+        
         
     }
     
     func isLessonInFuture(startTime: Int) -> Bool {
+        
+        // Checks if a lesson is in the future or today
+        
         print("LOG: Trying to parse startTime: \(startTime)")
         let startDate: Date = NSDate.init(timeIntervalSince1970: TimeInterval(startTime)) as Date
         print("LOG: Start time of the lesson is: \(startDate)")
