@@ -41,6 +41,9 @@ struct ScheduleListView: View {
                     .font(.footnote)
             }
         }
+        .refreshable(action: {
+            CDConnect.getTimeTable(forceUpdate: true)
+        })
     }
 }
 

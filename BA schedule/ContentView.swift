@@ -52,7 +52,7 @@ struct ContentView: View {
         .accentColor(.red)
         .onAppear(perform: {
             if(!showOnboardingView) {
-                CDConnect.getTimeTable()
+                CDConnect.getTimeTable(forceUpdate: false)
             }
         })
         .sheet(isPresented: $showOnboardingView) {

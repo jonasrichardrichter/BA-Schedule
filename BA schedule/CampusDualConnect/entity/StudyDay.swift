@@ -8,6 +8,8 @@
 import Foundation
 
 public struct StudyDay: Codable, Hashable {
-    public var day: String
-    public var lessonsOfTheDay: [Lesson]
+    
+    public var day: Date
+    public var lessons: [Lesson]
+
 }

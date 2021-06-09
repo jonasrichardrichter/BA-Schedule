@@ -15,6 +15,7 @@ public class CampusDualConnect: ObservableObject {
     let keychain = KeychainSwift()
     
     @AppStorage("lastUpdate") var lastUpdate: String?
+    @AppStorage("campusDualUrl") var campusDualUrl: String = "https://selfservice.campus-dual.de/room/json"
     
     let dateFormatter = DateFormatter()
     
@@ -25,28 +26,37 @@ public class CampusDualConnect: ObservableObject {
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss Z"
     }
     
-    func downloadJson() {
+    func generateUrl() -> URL {
         
         // Get Matrikel and Hash from Keychain
+        
         let matrikel = keychain.get("matrikel")
         let hash = keychain.get("hash")
         
         
-        // Download the json for the next 20 weeks and save it
-        
         // Generate link of the request
+        
         let startString = String(NSDate.now.timeIntervalSince1970)
         let endString = String(NSDate.now.timeIntervalSince1970 + 5266800)
         
-        let lessonsJsonUrl = NSURL(string: "https://selfservice.campus-dual.de/room/json?userid=\(matrikel ?? "")&hash=\(hash ?? "")&start=\(startString)&end=\(endString)&_=1608918010896")!
+        let lessonsJsonUrl = NSURL(string: "\(campusDualUrl)?userid=\(matrikel ?? "")&hash=\(hash ?? "")&start=\(startString)&end=\(endString)")!
+        
         
         print("LOG: generated link: \(lessonsJsonUrl)")
         
+        return lessonsJsonUrl as URL
+    }
+
+    func downloadJson() {
+        
+        // Download the json for the next 20 weeks and save it
+        
         // Create session, download json and save to lessons.txt
+        let url = self.generateUrl()
         
         let session = URLSession(configuration: .default)
         
-        session.downloadTask(with: lessonsJsonUrl as URL) { localURL, _, _ in
+        session.downloadTask(with: url) { localURL, _, _ in
             if let localURL = localURL {
                     if let json = try? String(contentsOf: localURL) {
                         let fileManager: FileManager = FileManager()
@@ -110,14 +120,22 @@ public class CampusDualConnect: ObservableObject {
             print(error)
         }
         
-        self.sortLessonsByStudyDay()
+        self.sortByStudyDay()
         
     }
     
-    func sortLessonsByStudyDay() {
+    func sortByStudyDay() {
         
         // Sorts all lessons by day into StudyDays
         
+        for lesson in lessonsUnsorted {
+            let nsDate = NSDate(timeIntervalSince1970: TimeInterval(lesson.start))
+            dateFormatter.dateStyle = .short
+            let date = dateFormatter.string(from: nsDate as Date)
+
+            
+            
+        }
         
     }
     
@@ -138,18 +156,32 @@ public class CampusDualConnect: ObservableObject {
         }
     }
     
-    public func getTimeTable() {
+    public func isConnectedToInternet() -> Bool {
+        return true
+    }
+    
+    public func getTimeTable(forceUpdate: Bool) {
+        
+        if forceUpdate {
+            lessonsUnsorted = []
+            downloadJson()
+        }
         
         // Check when the last update happend to reduce calls to Campus Dual
         
         if lastUpdate != nil {
             if let lastUpdateDate = dateFormatter.date(from: lastUpdate!) {
-                if Calendar.current.isDateInToday(lastUpdateDate) {
-                    print("LOG: Last update was today, skipping auto-update")
-                    parseJson()
+                if isConnectedToInternet() {
+                    if Calendar.current.isDateInToday(lastUpdateDate) {
+                        print("LOG: Last update was today, skipping auto-update")
+                        parseJson()
+                    } else {
+                        print("LOG: Last update wasn't today, downloading new.")
+                        downloadJson()
+                    }
                 } else {
-                    print("LOG: Last update wasn't today, downloading new.")
-                    downloadJson()
+                    print("LOG: No Internet Connection, parsing the fetched version.")
+                    parseJson()
                 }
             } else {
                 print("ERROR: Couldn't convert lastUpdate string to Date")
