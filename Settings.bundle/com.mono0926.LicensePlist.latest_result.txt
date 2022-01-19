@@ -1,7 +1,0 @@
-name: keychain-swift, nameSpecified: KeychainSwift, owner: evgenyneu, version: 19.0.0
-
-name: SwiftyJSON, nameSpecified: SwiftyJSON, owner: SwiftyJSON, version: 5.0.0
-
-add-version-numbers: false
-
-LicensePlist Version: 3.0.7
