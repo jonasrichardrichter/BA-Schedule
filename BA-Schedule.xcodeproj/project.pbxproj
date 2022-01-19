@@ -133,11 +133,10 @@
 			};
 			buildConfigurationList = 41A8BC302798B1FA0042DBB9 /* Build configuration list for PBXProject "BA-Schedule" */;
 			compatibilityVersion = "Xcode 13.0";
-			developmentRegion = en;
+			developmentRegion = de;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
-				Base,
+				de,
 			);
 			mainGroup = 41A8BC2C2798B1FA0042DBB9;
 			packageReferences = (
