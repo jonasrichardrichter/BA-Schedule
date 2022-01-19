@@ -11,6 +11,7 @@
 		41A8BC3B2798B1FA0042DBB9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A8BC3A2798B1FA0042DBB9 /* ContentView.swift */; };
 		41A8BC3D2798B1FB0042DBB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A8BC3C2798B1FB0042DBB9 /* Assets.xcassets */; };
 		41A8BC402798B1FB0042DBB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A8BC3F2798B1FB0042DBB9 /* Preview Assets.xcassets */; };
+		41A8BC4B2798B7210042DBB9 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 41A8BC4A2798B7210042DBB9 /* Logging */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41A8BC4B2798B7210042DBB9 /* Logging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +53,9 @@
 		41A8BC372798B1FA0042DBB9 /* BA-Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				41A8BC482798B6EE0042DBB9 /* Extensions */,
+				41A8BC472798B6D60042DBB9 /* UI Elements */,
+				41A8BC462798B6CD0042DBB9 /* Views */,
 				41A8BC382798B1FA0042DBB9 /* BA_ScheduleApp.swift */,
 				41A8BC3A2798B1FA0042DBB9 /* ContentView.swift */,
 				41A8BC3C2798B1FB0042DBB9 /* Assets.xcassets */,
@@ -65,6 +70,27 @@
 				41A8BC3F2798B1FB0042DBB9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		41A8BC462798B6CD0042DBB9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		41A8BC472798B6D60042DBB9 /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "UI Elements";
+			sourceTree = "<group>";
+		};
+		41A8BC482798B6EE0042DBB9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +109,9 @@
 			dependencies = (
 			);
 			name = "BA-Schedule";
+			packageProductDependencies = (
+				41A8BC4A2798B7210042DBB9 /* Logging */,
+			);
 			productName = "BA-Schedule";
 			productReference = 41A8BC352798B1FA0042DBB9 /* BA-Schedule.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +140,9 @@
 				Base,
 			);
 			mainGroup = 41A8BC2C2798B1FA0042DBB9;
+			packageReferences = (
+				41A8BC492798B7210042DBB9 /* XCRemoteSwiftPackageReference "swift-log" */,
+			);
 			productRefGroup = 41A8BC362798B1FA0042DBB9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -343,6 +375,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		41A8BC492798B7210042DBB9 /* XCRemoteSwiftPackageReference "swift-log" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-log";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		41A8BC4A2798B7210042DBB9 /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41A8BC492798B7210042DBB9 /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 41A8BC2D2798B1FA0042DBB9 /* Project object */;
 }
