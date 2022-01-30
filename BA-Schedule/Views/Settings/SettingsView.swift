@@ -22,7 +22,7 @@ struct SettingsView: View {
                         }
                         
                     NavigationLink(destination: {
-                        Text("AboutView")
+                        AboutView()
                     }, label: {
                         HStack {
                             Image(systemName: "questionmark.app")

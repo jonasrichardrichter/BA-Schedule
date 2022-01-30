@@ -27,23 +27,11 @@ struct LoginView: View {
                     TextField("ONBOARDING.LOGIN.MATRIKEL", text: $username)
                         .textInputAutocapitalization(.never)
                         .textContentType(.username)
+                        .keyboardType(.numberPad)
                         
                     SecureField("ONBOARDING.LOGIN.HASH", text: $hash)
                         .textInputAutocapitalization(.never)
                         .textContentType(.password)
-                
-                    Button("ONBOARDING.LOGIN.BUTTON", action: {
-                        self.isLoading = true
-                        print("pressed")
-                    })
-                        .overlay(content: {
-                            if isLoading {
-                                ProgressView()
-                                    .frame(maxWidth: .infinity, alignment: .center)
-                                    .background()
-                            }
-                        })
-                        .frame(maxWidth: .infinity, alignment: .center)
                 }, header: {
                     VStack {
                         Image(systemName: "key.fill")
@@ -61,6 +49,21 @@ struct LoginView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                         .padding()
                 })
+                
+                Section {
+                    Button("ONBOARDING.LOGIN.BUTTON", action: {
+                        self.isLoading = true
+                        print("pressed")
+                    })
+                        .overlay(content: {
+                            if isLoading {
+                                ProgressView()
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                                    .background()
+                            }
+                        })
+                        .frame(maxWidth: .infinity, alignment: .center)
+                }
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
