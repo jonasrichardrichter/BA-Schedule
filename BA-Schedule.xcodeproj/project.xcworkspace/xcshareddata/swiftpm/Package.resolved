@@ -9,6 +9,15 @@
           "revision": "9b545be81668d54fb5a02e3ec6344927338f975e",
           "version": null
         }
+      },
+      {
+        "package": "KeychainItem",
+        "repositoryURL": "https://github.com/objcio/keychain-item",
+        "state": {
+          "branch": null,
+          "revision": "563fc973ee4c1fcdea646630f847a241025da3c4",
+          "version": "0.1.0"
+        }
       }
     ]
   },

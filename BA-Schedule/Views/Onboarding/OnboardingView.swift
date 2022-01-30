@@ -28,7 +28,8 @@ struct OnboardingView: View {
                 Spacer()
                 
                 NavigationLink(destination: {
-                    Text("new view")
+                    LoginView()
+                        .navigationBarTitleDisplayMode(.inline)
                 }, label: {
                     HStack {
                         Spacer()

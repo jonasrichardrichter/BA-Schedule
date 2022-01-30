@@ -13,3 +13,11 @@
 
 // MARK: - Onboarding
 "WELCOME_MESSAGE" = "Willkommen bei BA-Schedule!";
+"ONBOARDING.LOGIN.TITLE" = "Anmeldung bei CampusDual";
+"ONBOARDING.LOGIN.MATRIKEL" = "Matrikelnummer";
+"ONBOARDING.LOGIN.HASH" = "Hash zur Authentifizierung";
+"ONBOARDING.LOGIN.BUTTON" = "Anmelden";
+
+// MARK: - Settings
+"SETTINGS.GITHUB-LINK" = "Zum Quelltext auf GitHub";
+"SETTINGS.ABOUT" = "Über diese App";
