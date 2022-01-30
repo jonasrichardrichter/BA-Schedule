@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  BA-Schedule
+
+  Created by Jonas Richard Richter on 30.01.22.
+  
+*/
+
+// MARK: - Tabs
+
+"SCHEDULE" = "Stundenplan";
+"SETTINGS" = "Einstellungen";
+
+// MARK: - Onboarding
+"WELCOME_MESSAGE" = "Willkommen bei BA-Schedule!";

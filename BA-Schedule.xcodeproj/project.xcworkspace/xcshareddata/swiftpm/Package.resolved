@@ -2,12 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "swift-log",
-        "repositoryURL": "https://github.com/apple/swift-log",
+        "package": "CampusDualKit",
+        "repositoryURL": "https://github.com/jns-rchtr/CampusDualKit",
         "state": {
-          "branch": null,
-          "revision": "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
-          "version": "1.4.2"
+          "branch": "development",
+          "revision": "9b545be81668d54fb5a02e3ec6344927338f975e",
+          "version": null
         }
       }
     ]

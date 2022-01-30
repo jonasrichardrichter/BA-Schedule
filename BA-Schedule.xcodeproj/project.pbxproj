@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4129F38C2798B81100A46155 /* Logger+CustomInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129F38B2798B81100A46155 /* Logger+CustomInit.swift */; };
+		416306B327A6A11800A92714 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416306B227A6A11800A92714 /* Lesson.swift */; };
+		416306B627A6BA9D00A92714 /* CampusDualKit in Frameworks */ = {isa = PBXBuildFile; productRef = 416306B527A6BA9D00A92714 /* CampusDualKit */; };
+		416306B927A6BC3000A92714 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 416306BB27A6BC3000A92714 /* Localizable.strings */; };
+		416306BE27A6BCBE00A92714 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416306BD27A6BCBE00A92714 /* ScheduleView.swift */; };
+		416306C227A6BE0100A92714 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416306C127A6BE0100A92714 /* SettingsView.swift */; };
+		416306C427A6BE4800A92714 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416306C327A6BE4800A92714 /* OnboardingView.swift */; };
+		416306C627A6C25500A92714 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416306C527A6C25500A92714 /* Feature.swift */; };
 		41A8BC392798B1FA0042DBB9 /* BA_ScheduleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A8BC382798B1FA0042DBB9 /* BA_ScheduleApp.swift */; };
 		41A8BC3B2798B1FA0042DBB9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A8BC3A2798B1FA0042DBB9 /* ContentView.swift */; };
 		41A8BC3D2798B1FB0042DBB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A8BC3C2798B1FB0042DBB9 /* Assets.xcassets */; };
@@ -15,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4129F38B2798B81100A46155 /* Logger+CustomInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+CustomInit.swift"; sourceTree = "<group>"; };
+		416306B227A6A11800A92714 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		416306BA27A6BC3000A92714 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		416306BD27A6BCBE00A92714 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		416306C127A6BE0100A92714 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		416306C327A6BE4800A92714 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		416306C527A6C25500A92714 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		41A8BC352798B1FA0042DBB9 /* BA-Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BA-Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A8BC382798B1FA0042DBB9 /* BA_ScheduleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BA_ScheduleApp.swift; sourceTree = "<group>"; };
 		41A8BC3A2798B1FA0042DBB9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				416306B627A6BA9D00A92714 /* CampusDualKit in Frameworks */,
 				41A8BC4B2798B7210042DBB9 /* Logging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -34,6 +50,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		416306BC27A6BCAA00A92714 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				416306BD27A6BCBE00A92714 /* ScheduleView.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		416306BF27A6BDEE00A92714 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				416306C127A6BE0100A92714 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		416306C027A6BDF300A92714 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				416306C327A6BE4800A92714 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		41A8BC2C2798B1FA0042DBB9 = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +99,7 @@
 				41A8BC382798B1FA0042DBB9 /* BA_ScheduleApp.swift */,
 				41A8BC3A2798B1FA0042DBB9 /* ContentView.swift */,
 				41A8BC3C2798B1FB0042DBB9 /* Assets.xcassets */,
+				416306BB27A6BC3000A92714 /* Localizable.strings */,
 				41A8BC3E2798B1FB0042DBB9 /* Preview Content */,
 			);
 			path = "BA-Schedule";
@@ -75,6 +116,9 @@
 		41A8BC462798B6CD0042DBB9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				416306C027A6BDF300A92714 /* Onboarding */,
+				416306BF27A6BDEE00A92714 /* Settings */,
+				416306BC27A6BCAA00A92714 /* Schedule */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -82,6 +126,8 @@
 		41A8BC472798B6D60042DBB9 /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
+				416306B227A6A11800A92714 /* Lesson.swift */,
+				416306C527A6C25500A92714 /* Feature.swift */,
 			);
 			path = "UI Elements";
 			sourceTree = "<group>";
@@ -89,6 +135,7 @@
 		41A8BC482798B6EE0042DBB9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4129F38B2798B81100A46155 /* Logger+CustomInit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -111,6 +158,7 @@
 			name = "BA-Schedule";
 			packageProductDependencies = (
 				41A8BC4A2798B7210042DBB9 /* Logging */,
+				416306B527A6BA9D00A92714 /* CampusDualKit */,
 			);
 			productName = "BA-Schedule";
 			productReference = 41A8BC352798B1FA0042DBB9 /* BA-Schedule.app */;
@@ -141,6 +189,7 @@
 			mainGroup = 41A8BC2C2798B1FA0042DBB9;
 			packageReferences = (
 				41A8BC492798B7210042DBB9 /* XCRemoteSwiftPackageReference "swift-log" */,
+				416306B427A6BA9D00A92714 /* XCRemoteSwiftPackageReference "CampusDualKit" */,
 			);
 			productRefGroup = 41A8BC362798B1FA0042DBB9 /* Products */;
 			projectDirPath = "";
@@ -157,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41A8BC402798B1FB0042DBB9 /* Preview Assets.xcassets in Resources */,
+				416306B927A6BC3000A92714 /* Localizable.strings in Resources */,
 				41A8BC3D2798B1FB0042DBB9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,12 +218,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				416306BE27A6BCBE00A92714 /* ScheduleView.swift in Sources */,
 				41A8BC3B2798B1FA0042DBB9 /* ContentView.swift in Sources */,
 				41A8BC392798B1FA0042DBB9 /* BA_ScheduleApp.swift in Sources */,
+				416306C227A6BE0100A92714 /* SettingsView.swift in Sources */,
+				416306C627A6C25500A92714 /* Feature.swift in Sources */,
+				4129F38C2798B81100A46155 /* Logger+CustomInit.swift in Sources */,
+				416306B327A6A11800A92714 /* Lesson.swift in Sources */,
+				416306C427A6BE4800A92714 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		416306BB27A6BC3000A92714 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				416306BA27A6BC3000A92714 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		41A8BC412798B1FB0042DBB9 /* Debug */ = {
@@ -376,6 +443,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		416306B427A6BA9D00A92714 /* XCRemoteSwiftPackageReference "CampusDualKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jns-rchtr/CampusDualKit";
+			requirement = {
+				branch = development;
+				kind = branch;
+			};
+		};
 		41A8BC492798B7210042DBB9 /* XCRemoteSwiftPackageReference "swift-log" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-log";
@@ -387,6 +462,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		416306B527A6BA9D00A92714 /* CampusDualKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 416306B427A6BA9D00A92714 /* XCRemoteSwiftPackageReference "CampusDualKit" */;
+			productName = CampusDualKit;
+		};
 		41A8BC4A2798B7210042DBB9 /* Logging */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 41A8BC492798B7210042DBB9 /* XCRemoteSwiftPackageReference "swift-log" */;
