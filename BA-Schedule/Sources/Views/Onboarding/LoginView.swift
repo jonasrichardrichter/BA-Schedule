@@ -108,9 +108,11 @@ struct LoginView: View {
     }
     
     func saveLoginCredentialsAndFinishOnboarding(username: String, hash: String) {
-        self.settings.username = username
-        self.settings.hash = hash
-        self.settings.isOnboarded = true
+        DispatchQueue.main.async {
+            self.settings.username = username
+            self.settings.hash = hash
+            self.settings.isOnboarded = true
+        }
     }
     
 }
