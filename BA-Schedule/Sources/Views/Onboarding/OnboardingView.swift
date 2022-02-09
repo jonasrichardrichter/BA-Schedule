@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    
+    // MARK: - Properties
+    
+    @EnvironmentObject var settings: Settings
+    
+    
+    // MARK: - View
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -26,6 +34,8 @@ struct OnboardingView: View {
                 }
                 
                 Spacer()
+                
+                // TODO: Add privacy informations
                 
                 NavigationLink(destination: {
                     LoginView()
@@ -46,6 +56,8 @@ struct OnboardingView: View {
                 }).padding()
             }
         }
+        .navigationBarHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -53,5 +65,6 @@ struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingView()
             .environment(\.locale, .init(identifier: "de"))
+            .environmentObject(Settings())
     }
 }

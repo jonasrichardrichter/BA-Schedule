@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4111ED0427B4451A00C7FF8D /* Binding+not.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4111ED0327B4451900C7FF8D /* Binding+not.swift */; };
 		4129F38C2798B81100A46155 /* Logger+CustomInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129F38B2798B81100A46155 /* Logger+CustomInit.swift */; };
+		41407EED27A9BC9E00DBB55A /* ServiceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41407EEC27A9BC9E00DBB55A /* ServiceWrapper.swift */; };
+		41407EEF27A9C31600DBB55A /* StudyDay+AppReviewDemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41407EEE27A9C31600DBB55A /* StudyDay+AppReviewDemoData.swift */; };
 		416306B327A6A11800A92714 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416306B227A6A11800A92714 /* Lesson.swift */; };
 		416306B627A6BA9D00A92714 /* CampusDualKit in Frameworks */ = {isa = PBXBuildFile; productRef = 416306B527A6BA9D00A92714 /* CampusDualKit */; };
 		416306B927A6BC3000A92714 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 416306BB27A6BC3000A92714 /* Localizable.strings */; };
@@ -28,7 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4111ED0327B4451900C7FF8D /* Binding+not.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+not.swift"; sourceTree = "<group>"; };
 		4129F38B2798B81100A46155 /* Logger+CustomInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+CustomInit.swift"; sourceTree = "<group>"; };
+		41407EEC27A9BC9E00DBB55A /* ServiceWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceWrapper.swift; sourceTree = "<group>"; };
+		41407EEE27A9C31600DBB55A /* StudyDay+AppReviewDemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StudyDay+AppReviewDemoData.swift"; sourceTree = "<group>"; };
 		416306B227A6A11800A92714 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		416306BA27A6BC3000A92714 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		416306BD27A6BCBE00A92714 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
@@ -60,6 +66,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41407EE627A9B8DA00DBB55A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				41A8BC3E2798B1FB0042DBB9 /* Preview Content */,
+				41A8BC3C2798B1FB0042DBB9 /* Assets.xcassets */,
+				416306BB27A6BC3000A92714 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		41407EE727A9B8E400DBB55A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				41407EEB27A9BC8E00DBB55A /* Services */,
+				41A8BC482798B6EE0042DBB9 /* Extensions */,
+				41A8BC472798B6D60042DBB9 /* UI Elements */,
+				41A8BC462798B6CD0042DBB9 /* Views */,
+				41A8BC382798B1FA0042DBB9 /* BA_ScheduleApp.swift */,
+				41A8BC3A2798B1FA0042DBB9 /* ContentView.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		41407EEB27A9BC8E00DBB55A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				41407EEC27A9BC9E00DBB55A /* ServiceWrapper.swift */,
+				41407EEE27A9C31600DBB55A /* StudyDay+AppReviewDemoData.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		416306BC27A6BCAA00A92714 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,14 +144,8 @@
 		41A8BC372798B1FA0042DBB9 /* BA-Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				41A8BC482798B6EE0042DBB9 /* Extensions */,
-				41A8BC472798B6D60042DBB9 /* UI Elements */,
-				41A8BC462798B6CD0042DBB9 /* Views */,
-				41A8BC382798B1FA0042DBB9 /* BA_ScheduleApp.swift */,
-				41A8BC3A2798B1FA0042DBB9 /* ContentView.swift */,
-				41A8BC3C2798B1FB0042DBB9 /* Assets.xcassets */,
-				416306BB27A6BC3000A92714 /* Localizable.strings */,
-				41A8BC3E2798B1FB0042DBB9 /* Preview Content */,
+				41407EE727A9B8E400DBB55A /* Sources */,
+				41407EE627A9B8DA00DBB55A /* Resources */,
 			);
 			path = "BA-Schedule";
 			sourceTree = "<group>";
@@ -150,6 +182,7 @@
 			children = (
 				4129F38B2798B81100A46155 /* Logger+CustomInit.swift */,
 				416306CC27A6DC7100A92714 /* URL+BA-Schedule.swift */,
+				4111ED0327B4451900C7FF8D /* Binding+not.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -238,11 +271,14 @@
 				41A8BC3B2798B1FA0042DBB9 /* ContentView.swift in Sources */,
 				41A8BC392798B1FA0042DBB9 /* BA_ScheduleApp.swift in Sources */,
 				416306C227A6BE0100A92714 /* SettingsView.swift in Sources */,
+				41407EEF27A9C31600DBB55A /* StudyDay+AppReviewDemoData.swift in Sources */,
 				41A437F327A6FEE700D0D43B /* AboutView.swift in Sources */,
 				416306C627A6C25500A92714 /* Feature.swift in Sources */,
 				416306CD27A6DC7100A92714 /* URL+BA-Schedule.swift in Sources */,
 				4129F38C2798B81100A46155 /* Logger+CustomInit.swift in Sources */,
+				41407EED27A9BC9E00DBB55A /* ServiceWrapper.swift in Sources */,
 				416306C827A6D67800A92714 /* Settings.swift in Sources */,
+				4111ED0427B4451A00C7FF8D /* Binding+not.swift in Sources */,
 				416306CF27A6DD9600A92714 /* LoginView.swift in Sources */,
 				416306B327A6A11800A92714 /* Lesson.swift in Sources */,
 				416306C427A6BE4800A92714 /* OnboardingView.swift in Sources */,
@@ -386,7 +422,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BA-Schedule/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BA-Schedule/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = FAEXU5NUQ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -416,7 +452,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BA-Schedule/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BA-Schedule/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = FAEXU5NUQ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

@@ -6,16 +6,21 @@
 //
 
 import SwiftUI
+import CampusDualKit
 
 struct LoginView: View {
     
     // MARK: - Properties
+    
+    @EnvironmentObject var settings: Settings
     
     @State private var username: String = ""
     @State private var hash: String = ""
     
     @State private var isLoading: Bool = false
     
+    @State private var showingError: Bool = false
+    @State private var errorToShow: ScheduleServiceError?
     
     // MARK: - View
     
@@ -43,6 +48,7 @@ struct LoginView: View {
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .textCase(.none)
+                            .lineLimit(nil)
                             .multilineTextAlignment(.center)
                             .foregroundColor(.primary)
                     }
@@ -51,18 +57,25 @@ struct LoginView: View {
                 })
                 
                 Section {
-                    Button("ONBOARDING.LOGIN.BUTTON", action: {
-                        self.isLoading = true
-                        print("pressed")
-                    })
-                        .overlay(content: {
-                            if isLoading {
-                                ProgressView()
-                                    .frame(maxWidth: .infinity, alignment: .center)
-                                    .background()
-                            }
+                    // MARK: - Button
+                    if !isLoading {
+                        Button("ONBOARDING.LOGIN.BUTTON", action: {
+                            self.isLoading = true
+                            self.doLogin()
                         })
-                        .frame(maxWidth: .infinity, alignment: .center)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .alert("LOGIN_ERROR_TITLE", isPresented: $showingError) {
+                                Button("ALERT_BUTTON_CANCEL", role: .cancel) { }
+                                
+                            } message: {
+                                Text(self.errorToShow?.localizedDescription ?? "")
+                            }
+
+                    } else {
+                        ProgressView()
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .background()
+                    }
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
@@ -76,10 +89,35 @@ struct LoginView: View {
             }
         })
     }
+    
+    // MARK: - Functions
+    
+    func doLogin() {
+      let service = ServiceWrapper()
+        service.checkCredentials(username: self.username, hash: self.hash) { (result: Result<Bool, ScheduleServiceError>) in
+            switch result {
+            case .success(_):
+                self.isLoading = false
+                self.saveLoginCredentialsAndFinishOnboarding(username: username, hash: hash)
+            case .failure(let failure):
+                self.isLoading = false
+                self.showingError = true
+                self.errorToShow = failure
+            }
+        }
+    }
+    
+    func saveLoginCredentialsAndFinishOnboarding(username: String, hash: String) {
+        self.settings.username = username
+        self.settings.hash = hash
+        self.settings.isOnboarded = true
+    }
+    
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            .environmentObject(Settings())
     }
 }

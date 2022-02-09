@@ -17,7 +17,11 @@
 "ONBOARDING.LOGIN.MATRIKEL" = "Matrikelnummer";
 "ONBOARDING.LOGIN.HASH" = "Hash zur Authentifizierung";
 "ONBOARDING.LOGIN.BUTTON" = "Anmelden";
+"LOGIN_ERROR_TITLE" = "Es ist ein Fehler beim Anmelden aufgetreten";
 
 // MARK: - Settings
 "SETTINGS.GITHUB-LINK" = "Zum Quelltext auf GitHub";
 "SETTINGS.ABOUT" = "Über diese App";
+
+// MARK: - Errors
+"ALERT_BUTTON_CANCEL" = "Abbrechen";

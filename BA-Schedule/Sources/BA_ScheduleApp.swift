@@ -9,9 +9,21 @@ import SwiftUI
 
 @main
 struct BA_ScheduleApp: App {
+    // MARK: - Properties
+    
+    private var settings: Settings
+    
+    // MARK: - Init
+    
+    init() {
+        self.settings = Settings()
+    }
+    
+    // MARK: - Scene
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(settings)
         }
     }
 }

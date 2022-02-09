@@ -10,8 +10,11 @@ import CampusDualKit
 
 struct ContentView: View {
     
-    @State private var onboarding = true
+    // MARK: - Properties
     
+    @EnvironmentObject var settings: Settings
+    
+    // MARK: - View
     var body: some View {
         TabView {
             // MARK: - Schedule
@@ -29,7 +32,7 @@ struct ContentView: View {
                 }
         }
         // MARK: - Onboarding Sheet
-            .fullScreenCover(isPresented: $onboarding, content: {
+        .fullScreenCover(isPresented: self.$settings.isOnboarded.not, content: {
                 OnboardingView()
             })
     }
@@ -39,5 +42,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environment(\.locale, .init(identifier: "de"))
+            .environmentObject(Settings())
     }
 }
