@@ -15,7 +15,7 @@ class ServiceWrapper: ObservableObject {
     func checkCredentials(username: String, hash: String, completion: @escaping (Result<Bool, CampusDualKit.ScheduleServiceError>) -> Void) {
         
         // Show demo data for App Review
-        if username == "appledemo" && hash == "appledemo" {
+        if username == "99999" && hash == "appledemo" {
             completion(.success(true))
             return
         }
@@ -35,9 +35,8 @@ class ServiceWrapper: ObservableObject {
     func loadSchedule(username: String, hash: String, completion: @escaping (Result<[StudyDay], ScheduleServiceError>) -> Void) {
         
         // Show demo data for App Review
-        if username == "appledemo" && hash == "appledemo" {
-            #warning("Implement App Review mode.")
-            completion(.failure(.network(nil)))
+        if username == "99999" && hash == "appledemo" {
+            completion(.success(StudyDay.demoData))
             return
         }
         
