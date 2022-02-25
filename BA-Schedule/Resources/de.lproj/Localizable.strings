@@ -22,6 +22,11 @@
 // MARK: - Settings
 "SETTINGS.GITHUB-LINK" = "Zum Quelltext auf GitHub";
 "SETTINGS.ABOUT" = "Über diese App";
+"SETTINGS.NOTLOGGEDIN.TITLE" = "Du bist aktuell nicht angemeldet.";
+"SETTINGS.NOTLOGGEDIN.DESCR" = "Um dich anzumelden hier tippen";
 
 // MARK: - Errors
 "ALERT_BUTTON_CANCEL" = "Abbrechen";
+
+// MARK: - General
+"GENERAL.UNKNOWN" = "Unbekannt";

@@ -33,6 +33,7 @@
 /* Begin PBXFileReference section */
 		4111ED0327B4451900C7FF8D /* Binding+not.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+not.swift"; sourceTree = "<group>"; };
 		4129F38B2798B81100A46155 /* Logger+CustomInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+CustomInit.swift"; sourceTree = "<group>"; };
+		412FB47C27B57D8900660427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		41407EEC27A9BC9E00DBB55A /* ServiceWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceWrapper.swift; sourceTree = "<group>"; };
 		41407EEE27A9C31600DBB55A /* StudyDay+AppReviewDemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StudyDay+AppReviewDemoData.swift"; sourceTree = "<group>"; };
 		416306B227A6A11800A92714 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
@@ -144,6 +145,7 @@
 		41A8BC372798B1FA0042DBB9 /* BA-Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				412FB47C27B57D8900660427 /* Info.plist */,
 				41407EE727A9B8E400DBB55A /* Sources */,
 				41407EE627A9B8DA00DBB55A /* Resources */,
 			);
@@ -426,9 +428,11 @@
 				DEVELOPMENT_TEAM = FAEXU5NUQ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "BA-Schedule/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "BA-Schedule";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -456,9 +460,11 @@
 				DEVELOPMENT_TEAM = FAEXU5NUQ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "BA-Schedule/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "BA-Schedule";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

@@ -8,9 +8,64 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
+    // MARK: - Properties
+    
+    @EnvironmentObject var settings: Settings
+    
+    @State private var showLogin = false
+    
+    // MARK: - View
+    
     var body: some View {
         NavigationView {
             List {
+                Section {
+                    if self.settings.isOnboarded {
+                        HStack {
+                            Image(systemName: "person.crop.circle.badge.checkmark")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 40, height: 40)
+                                .padding(.vertical)
+                                .symbolRenderingMode(.multicolor)
+                            VStack(alignment: .leading) {
+                                Text("Matrikel: \(settings.username ?? "unknown")")
+                            }
+                            .padding()
+                        }
+                    } else {
+                        Button {
+                            self.showLogin = true
+                        } label: {
+                            HStack {
+                                Image(systemName: "person.crop.circle.badge.xmark")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 40, height: 40)
+                                    .padding(.vertical)
+                                    .symbolRenderingMode(.multicolor)
+                                VStack(alignment: .center) {
+                                    Text("SETTINGS.NOTLOGGEDIN.TITLE")
+                                        .font(.callout)
+                                        .bold()
+                                        .multilineTextAlignment(.center)
+                                    Text("SETTINGS.NOTLOGGEDIN.DESCR")
+                                        .font(.footnote)
+                                        .foregroundColor(.secondary)
+                                        .multilineTextAlignment(.center)
+                                }
+                                .frame(maxWidth: .infinity, alignment: .center)
+                            .padding()
+                            }
+                        }
+                        .buttonStyle(.plain)
+                        .sheet(isPresented: self.$showLogin) {
+                            LoginView()
+                        }
+                    }
+                }
+                
                 Section {
                     Button {
                         UIApplication.shared.open(URL.BaSchedule.github)
@@ -41,5 +96,6 @@ struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
             .environment(\.locale, .init(identifier: "de"))
+            .environmentObject(Settings())
     }
 }
