@@ -49,10 +49,12 @@ struct ScheduleView: View {
                 }
             }
             .onAppear {
-                self.loadSchedule()
+                Task {
+                    await self.loadSchedule()
+                }
             }
             .refreshable {
-                self.loadSchedule()
+                await self.loadSchedule()
             }
         } else {
             NavigationView {
@@ -65,7 +67,7 @@ struct ScheduleView: View {
     
     // MARK: - Functions
     
-    private func loadSchedule() {
+    private func loadSchedule() async {
         // Check if user is onboarded
         guard settings.isOnboarded == true else {
             self.logger.debug("User is not onboarded. No data is loaded.")
@@ -82,21 +84,14 @@ struct ScheduleView: View {
             return
         }
         
-        self.service.loadSchedule(username: username, hash: hash) { (result: Result<[StudyDay], ScheduleServiceError>) in
-            switch result {
-            case .success(let data):
-                DispatchQueue.main.async {
-                    self.studyDays = data
-                    self.isInitialLoading = false
-                }
-            case .failure(let error):
-                self.logger.error("An error happened: \(error.localizedDescription)")
-            }
+        do {
+            let data = try await self.service.loadSchedule(username: username, hash: hash)
+            self.studyDays = data
+            self.isInitialLoading = false
+        } catch {
+            self.logger.error("An error happened: \(error.localizedDescription)")
         }
-        
-        
     }
-    
 }
 
 struct ScheduleView_Previews: PreviewProvider {

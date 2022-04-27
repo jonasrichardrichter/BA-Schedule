@@ -48,8 +48,8 @@ struct LoginView: View {
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .textCase(.none)
-                            .lineLimit(nil)
                             .multilineTextAlignment(.center)
+                            .lineLimit(nil)
                             .foregroundColor(.primary)
                     }
                         .frame(maxWidth: .infinity, alignment: .center)

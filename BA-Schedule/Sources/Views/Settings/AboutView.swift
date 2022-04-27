@@ -26,6 +26,12 @@ struct AboutView: View {
                         .fontWeight(.bold)
                     Text("Tri Hartono (The Noun Project)")
                 }
+                VStack(alignment: .leading) {
+                    Text("Made by")
+                        .font(.footnote)
+                        .fontWeight(.bold)
+                    Text("Jonas Richard Richter")
+                }
             }, header: {
                 VStack(alignment: .center) {
                     Image("Icon")
