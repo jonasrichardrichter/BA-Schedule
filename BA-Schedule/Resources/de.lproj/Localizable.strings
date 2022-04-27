@@ -11,6 +11,10 @@
 "SCHEDULE" = "Stundenplan";
 "SETTINGS" = "Einstellungen";
 
+// MARK: - Schedule
+
+"SCHEDULE.LAST.UPDATE %@" = "Letztes Update: %@";
+
 // MARK: - Onboarding
 "WELCOME_MESSAGE" = "Willkommen bei BA-Schedule!";
 "ONBOARDING.LOGIN.TITLE" = "Anmeldung bei CampusDual";

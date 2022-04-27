@@ -32,8 +32,8 @@ struct ScheduleView: View {
                         .progressViewStyle(.circular)
                         .navigationTitle("SCHEDULE")
                 } else {
-                    ScheduleListView(studyDays: self.studyDays)
-                    .navigationTitle("SCHEDULE")
+                    ScheduleListView(studyDays: self.studyDays, lastOnlineUpdate: self.settings.lastOnlineUpdate)
+                        .navigationTitle("SCHEDULE")
                 }
             }
             .onAppear {

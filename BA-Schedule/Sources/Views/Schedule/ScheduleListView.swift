@@ -11,18 +11,22 @@ import CampusDualKit
 struct ScheduleListView: View {
     
     @State public var studyDays: [StudyDay]
+    @State public var lastOnlineUpdate: Date
     
     var body: some View {
         List {
             ForEach(studyDays, id: \.self) { studyDay in
-                Section {
+                Section(content: {
                     ForEach(studyDay.lessons, id: \.self) { lesson in
                         Lesson(lesson: lesson)
                     }
-                } header: {
+                }, header: {
                     Text(studyDay.day.formatted(date: .complete, time: .omitted))
-                }
+                })
             }
+            Section(content: {}, footer: {
+                Text("SCHEDULE.LAST.UPDATE \(self.lastOnlineUpdate.formatted())")
+            })
         }
         .listStyle(.insetGrouped)
     }
@@ -30,7 +34,7 @@ struct ScheduleListView: View {
 
 struct ScheduleListView_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleListView(studyDays: StudyDay.demoData)
+        ScheduleListView(studyDays: StudyDay.demoData, lastOnlineUpdate: Date())
             .environment(\.locale, .init(identifier: "de"))
     }
 }
