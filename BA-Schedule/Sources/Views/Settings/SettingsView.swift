@@ -23,7 +23,7 @@ struct SettingsView: View {
                 
                 // MARK: - User
                 Section {
-                    if !self.settings.isOnboarded {
+                    if self.settings.isOnboarded {
                         HStack {
                             Image(systemName: "person.crop.circle.badge.checkmark")
                                 .resizable()
@@ -78,6 +78,7 @@ struct SettingsView: View {
                 // MARK: - More Functions
                 
                 Section {
+                    Toggle("SETTINGS.MOREFUNCTIONS.OFFLINESUPPORT", isOn: self.$settings.useOfflineSupport)
                     Label("GENERAL.COMINGSOON", systemImage: "deskclock")
                 } header: {
                     Text("SETTINGS.MOREFUNCTIONS.HEADER")

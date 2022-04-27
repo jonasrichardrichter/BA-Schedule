@@ -30,6 +30,7 @@
 "SETTINGS.NOTLOGGEDIN.DESCR" = "Um dich anzumelden hier tippen";
 "SETTINGS.LOGGEDIN.TITLE" = "Du bist angemeldet!";
 "SETTINGS.MOREFUNCTIONS.HEADER" = "Weitere Funktionen";
+"SETTINGS.MOREFUNCTIONS.OFFLINESUPPORT" = "Offline-Speicherung";
 
 // MARK: - Errors
 "ALERT_BUTTON_CANCEL" = "Abbrechen";

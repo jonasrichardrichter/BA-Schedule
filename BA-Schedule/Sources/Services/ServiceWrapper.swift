@@ -46,4 +46,7 @@ class ServiceWrapper: ObservableObject {
             throw error
         }
     }
+    
+    // MARK: - Offline Support
+    
 }

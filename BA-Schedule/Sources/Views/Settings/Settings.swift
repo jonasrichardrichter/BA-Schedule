@@ -15,6 +15,7 @@ class Settings: ObservableObject {
     init() {
         self.isOnboarded = UserDefaults.standard.object(forKey: "isOnboarded") as? Bool ?? false
         self.lastVersionUsed = UserDefaults.standard.object(forKey: "lastVersionUsed") as? String ??  Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+        self.useOfflineSupport = UserDefaults.standard.object(forKey: "useOfflineSupport") as? Bool ?? true
     }
     
     // MARK: - Login information
@@ -38,4 +39,13 @@ class Settings: ObservableObject {
             UserDefaults.standard.set(lastVersionUsed, forKey: "lastVersionUsed")
         }
     }
+    
+    // MARK: - Offline Support
+    
+    @Published var useOfflineSupport: Bool {
+        didSet {
+            UserDefaults.standard.set(useOfflineSupport, forKey: "useOfflineSupport")
+        }
+    }
+    
 }
