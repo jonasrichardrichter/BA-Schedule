@@ -18,6 +18,10 @@
 "ONBOARDING.LOGIN.HASH" = "Hash zur Authentifizierung";
 "ONBOARDING.LOGIN.BUTTON" = "Anmelden";
 "LOGIN_ERROR_TITLE" = "Es ist ein Fehler beim Anmelden aufgetreten";
+"FEATURE_1_TITLE" = "Übersichtliche Darstellung";
+"FEATURE_1_DESCR" = "Dein Stundenplan ganz einfach, ordentlich und mobil verfügbar.";
+"FEATURE_2_TITLE" = "Auslegung auf Datenschutz";
+"FEATURE_2_DESCR" = "Die App wurde mit einem Fokus auf Datenschutz entwickelt.";
 
 // MARK: - Settings
 "SETTINGS.GITHUB-LINK" = "Zum Quelltext auf GitHub";

@@ -26,11 +26,9 @@ struct OnboardingView: View {
                 Spacer()
                 
                 VStack(spacing: 40) {
-                    Feature(systemImage: "sun.max.fill", iconColor: .yellow, title: "Oh sunny days!", description: "Now with extra sunshine to make you even happier.")
+                    Feature(systemImage: "calendar.day.timeline.leading", iconColor: .blue, title: "FEATURE_1_TITLE", description: "FEATURE_1_DESCR")
                     
-                    Feature(systemImage: "sun.max.fill", iconColor: .yellow, title: "Oh sunny days!", description: "Now with extra sunshine to make you even happier.")
-                    
-                    Feature(systemImage: "sun.max.fill", iconColor: .yellow, title: "Oh sunny days!", description: "Now with extra sunshine to make you even happier.")
+                    Feature(systemImage: "lock.shield", iconColor: .yellow, title: "FEATURE_2_TITLE", description: "FEATURE_2_DESCR")
                 }
                 
                 Spacer()

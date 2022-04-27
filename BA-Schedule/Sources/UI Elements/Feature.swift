@@ -13,8 +13,8 @@ struct Feature: View {
     
     var systemImage: String
     var iconColor: Color
-    var title: String
-    var description: String
+    var title: LocalizedStringKey
+    var description: LocalizedStringKey
     
     // MARK: - View
     
