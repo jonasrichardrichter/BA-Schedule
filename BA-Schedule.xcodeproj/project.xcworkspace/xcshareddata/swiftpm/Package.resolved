@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jns-rchtr/CampusDualKit",
       "state" : {
-        "branch" : "development",
-        "revision" : "e63ef8288800ef988b44f347a5ae9aa6a73df4d1"
+        "revision" : "8343f05b00029a1cc972c772714ebaf84a003c82",
+        "version" : "0.2.0"
       }
     },
     {

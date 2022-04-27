@@ -509,8 +509,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jns-rchtr/CampusDualKit";
 			requirement = {
-				branch = development;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
 			};
 		};
 		416306C927A6DABF00A92714 /* XCRemoteSwiftPackageReference "keychain-item" */ = {

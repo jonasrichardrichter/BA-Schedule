@@ -20,8 +20,10 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             List {
+                
+                // MARK: - User
                 Section {
-                    if self.settings.isOnboarded {
+                    if !self.settings.isOnboarded {
                         HStack {
                             Image(systemName: "person.crop.circle.badge.checkmark")
                                 .resizable()
@@ -30,7 +32,14 @@ struct SettingsView: View {
                                 .padding(.vertical)
                                 .symbolRenderingMode(.multicolor)
                             VStack(alignment: .leading) {
+                                Text("SETTINGS.LOGGEDIN.TITLE")
+                                    .font(.callout)
+                                    .bold()
+                                    .multilineTextAlignment(.center)
                                 Text("Matrikel: \(settings.username ?? "unknown")")
+                                    .font(.footnote)
+                                    .foregroundColor(.secondary)
+                                    .multilineTextAlignment(.center)
                             }
                             .padding()
                         }
@@ -66,6 +75,16 @@ struct SettingsView: View {
                     }
                 }
                 
+                // MARK: - More Functions
+                
+                Section {
+                    Label("GENERAL.COMINGSOON", systemImage: "deskclock")
+                } header: {
+                    Text("SETTINGS.MOREFUNCTIONS.HEADER")
+                }
+
+                
+                // MARK: - About
                 Section {
                     Button {
                         UIApplication.shared.open(URL.BaSchedule.github)

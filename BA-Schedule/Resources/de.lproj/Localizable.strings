@@ -28,9 +28,12 @@
 "SETTINGS.ABOUT" = "Über diese App";
 "SETTINGS.NOTLOGGEDIN.TITLE" = "Du bist aktuell nicht angemeldet.";
 "SETTINGS.NOTLOGGEDIN.DESCR" = "Um dich anzumelden hier tippen";
+"SETTINGS.LOGGEDIN.TITLE" = "Du bist angemeldet!";
+"SETTINGS.MOREFUNCTIONS.HEADER" = "Weitere Funktionen";
 
 // MARK: - Errors
 "ALERT_BUTTON_CANCEL" = "Abbrechen";
 
 // MARK: - General
 "GENERAL.UNKNOWN" = "Unbekannt";
+"GENERAL.COMINGSOON" = "Bald verfügbar";

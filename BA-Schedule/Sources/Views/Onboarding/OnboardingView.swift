@@ -25,7 +25,7 @@ struct OnboardingView: View {
                 
                 Spacer()
                 
-                VStack(spacing: 40) {
+                VStack(alignment: .leading, spacing: 40) {
                     Feature(systemImage: "calendar.day.timeline.leading", iconColor: .blue, title: "FEATURE_1_TITLE", description: "FEATURE_1_DESCR")
                     
                     Feature(systemImage: "lock.shield", iconColor: .yellow, title: "FEATURE_2_TITLE", description: "FEATURE_2_DESCR")
