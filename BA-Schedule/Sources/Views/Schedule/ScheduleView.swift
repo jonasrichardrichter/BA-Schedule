@@ -42,7 +42,7 @@ struct ScheduleView: View {
                 }
             }
             .refreshable {
-                await self.loadSchedule()
+                await self.loadSchedule(forceUpdate: true)
             }
         } else {
             NavigationView {
@@ -55,7 +55,7 @@ struct ScheduleView: View {
     
     // MARK: - Functions
     
-    private func loadSchedule() async {
+    private func loadSchedule(forceUpdate: Bool = false) async {
         // Check if user is onboarded
         guard settings.isOnboarded == true else {
             self.logger.debug("User is not onboarded. No data is loaded.")
@@ -68,18 +68,28 @@ struct ScheduleView: View {
         guard let username = self.settings.username else {
             return
         }
+        
         guard let hash = self.settings.hash else {
             return
         }
         
+        var data: [StudyDay] = []
+        
         do {
-            let data = try await self.service.loadSchedule(username: username, hash: hash)
-            self.studyDays = data
-            self.settings.lastOnlineUpdate = Date()
-            self.isInitialLoading = false
+            if self.settings.useOfflineSupport && Calendar.current.isDateInToday(self.settings.lastOnlineUpdate) && !forceUpdate {
+                self.logger.info("Using data from storage.")
+                data = try await self.service.loadFromJson()
+            } else {
+                self.logger.info("Loading data via network.")
+                data = try await self.service.loadSchedule(username: username, hash: hash)
+                self.settings.lastOnlineUpdate = Date()
+            }
         } catch {
             self.logger.error("An error happened: \(error.localizedDescription)")
         }
+        
+        self.studyDays = data
+        self.isInitialLoading = false
     }
 }
 
