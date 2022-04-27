@@ -65,7 +65,7 @@ struct SettingsView: View {
                                         .multilineTextAlignment(.center)
                                 }
                                 .frame(maxWidth: .infinity, alignment: .center)
-                            .padding()
+                                .padding()
                             }
                         }
                         .buttonStyle(.plain)
@@ -79,31 +79,26 @@ struct SettingsView: View {
                 
                 Section {
                     Toggle(isOn: self.$settings.useOfflineSupport) {
-                        Label("SETTINGS.MOREFUNCTIONS.OFFLINESUPPORT", systemImage: "antenna.radiowaves.left.and.right.slash")
+                        Label("SETTINGS.MOREFUNCTIONS.OFFLINESUPPORT", systemImage: "internaldrive")
                     }
                 } header: {
                     Text("SETTINGS.MOREFUNCTIONS.HEADER")
                 }
-
+                
                 
                 // MARK: - About
                 Section {
                     Button {
                         UIApplication.shared.open(URL.BaSchedule.github)
-                        } label: {
-                            HStack {
-                                Image(systemName: "text.and.command.macwindow")
-                                Text("SETTINGS.GITHUB-LINK")
-                            }
-                        }
-                        
+                    } label: {
+                        Label("SETTINGS.GITHUB-LINK", systemImage: "text.and.command.macwindow")
+                    }
+                    
                     NavigationLink(destination: {
                         AboutView()
                     }, label: {
-                        HStack {
-                            Image(systemName: "questionmark.app")
-                            Text("SETTINGS.ABOUT")
-                        }
+                        Label("SETTINGS.ABOUT", systemImage: "questionmark.app")
+                            .foregroundColor(.primary)
                     })
                 }
             }

@@ -10,7 +10,7 @@ import CampusDualKit
 
 struct ScheduleListView: View {
     
-    @State public var studyDays: [StudyDay]
+    @Binding public var studyDays: [StudyDay]
     @State public var lastOnlineUpdate: Date
     
     var body: some View {
@@ -34,7 +34,7 @@ struct ScheduleListView: View {
 
 struct ScheduleListView_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleListView(studyDays: StudyDay.demoData, lastOnlineUpdate: Date())
+        ScheduleListView(studyDays: .constant(StudyDay.demoData), lastOnlineUpdate: Date())
             .environment(\.locale, .init(identifier: "de"))
     }
 }
