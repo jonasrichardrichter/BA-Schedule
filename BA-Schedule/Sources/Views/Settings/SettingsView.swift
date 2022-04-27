@@ -78,8 +78,9 @@ struct SettingsView: View {
                 // MARK: - More Functions
                 
                 Section {
-                    Toggle("SETTINGS.MOREFUNCTIONS.OFFLINESUPPORT", isOn: self.$settings.useOfflineSupport)
-                    Label("GENERAL.COMINGSOON", systemImage: "deskclock")
+                    Toggle(isOn: self.$settings.useOfflineSupport) {
+                        Label("SETTINGS.MOREFUNCTIONS.OFFLINESUPPORT", systemImage: "antenna.radiowaves.left.and.right.slash")
+                    }
                 } header: {
                     Text("SETTINGS.MOREFUNCTIONS.HEADER")
                 }
