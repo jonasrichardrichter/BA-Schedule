@@ -75,6 +75,7 @@ struct ScheduleView: View {
         do {
             let data = try await self.service.loadSchedule(username: username, hash: hash)
             self.studyDays = data
+            self.settings.lastOnlineUpdate = Date()
             self.isInitialLoading = false
         } catch {
             self.logger.error("An error happened: \(error.localizedDescription)")
