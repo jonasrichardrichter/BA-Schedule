@@ -32,19 +32,7 @@ struct ScheduleView: View {
                         .progressViewStyle(.circular)
                         .navigationTitle("SCHEDULE")
                 } else {
-                    List {
-                        ForEach(studyDays, id: \.self) { studyDay in
-                            Section {
-                                ForEach(studyDay.lessons, id: \.self) { lesson in
-                                    Lesson(lesson: lesson)
-                                }
-                            } header: {
-                                Text(studyDay.day.formatted(date: .complete, time: .omitted))
-                            }
-
-                        }
-                    }
-                    .listStyle(.plain)
+                    ScheduleListView(studyDays: self.studyDays)
                     .navigationTitle("SCHEDULE")
                 }
             }

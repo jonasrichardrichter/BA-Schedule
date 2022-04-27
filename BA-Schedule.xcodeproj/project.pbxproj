@@ -11,6 +11,7 @@
 		4129F38C2798B81100A46155 /* Logger+CustomInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129F38B2798B81100A46155 /* Logger+CustomInit.swift */; };
 		41407EED27A9BC9E00DBB55A /* ServiceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41407EEC27A9BC9E00DBB55A /* ServiceWrapper.swift */; };
 		41407EEF27A9C31600DBB55A /* StudyDay+AppReviewDemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41407EEE27A9C31600DBB55A /* StudyDay+AppReviewDemoData.swift */; };
+		4154BA26281969CA00907AD5 /* ScheduleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4154BA25281969CA00907AD5 /* ScheduleListView.swift */; };
 		416306B327A6A11800A92714 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416306B227A6A11800A92714 /* Lesson.swift */; };
 		416306B627A6BA9D00A92714 /* CampusDualKit in Frameworks */ = {isa = PBXBuildFile; productRef = 416306B527A6BA9D00A92714 /* CampusDualKit */; };
 		416306B927A6BC3000A92714 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 416306BB27A6BC3000A92714 /* Localizable.strings */; };
@@ -36,6 +37,7 @@
 		412FB47C27B57D8900660427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		41407EEC27A9BC9E00DBB55A /* ServiceWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceWrapper.swift; sourceTree = "<group>"; };
 		41407EEE27A9C31600DBB55A /* StudyDay+AppReviewDemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StudyDay+AppReviewDemoData.swift"; sourceTree = "<group>"; };
+		4154BA25281969CA00907AD5 /* ScheduleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListView.swift; sourceTree = "<group>"; };
 		416306B227A6A11800A92714 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		416306BA27A6BC3000A92714 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		416306BD27A6BCBE00A92714 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				416306BD27A6BCBE00A92714 /* ScheduleView.swift */,
+				4154BA25281969CA00907AD5 /* ScheduleListView.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				41A8BC392798B1FA0042DBB9 /* BA_ScheduleApp.swift in Sources */,
 				416306C227A6BE0100A92714 /* SettingsView.swift in Sources */,
 				41407EEF27A9C31600DBB55A /* StudyDay+AppReviewDemoData.swift in Sources */,
+				4154BA26281969CA00907AD5 /* ScheduleListView.swift in Sources */,
 				41A437F327A6FEE700D0D43B /* AboutView.swift in Sources */,
 				416306C627A6C25500A92714 /* Feature.swift in Sources */,
 				416306CD27A6DC7100A92714 /* URL+BA-Schedule.swift in Sources */,
