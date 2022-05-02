@@ -13,6 +13,7 @@ struct LoginView: View {
     // MARK: - Properties
     
     @EnvironmentObject var settings: Settings
+    @Environment(\.presentationMode) var presentationMode
     
     @State private var username: String = ""
     @State private var hash: String = ""
@@ -113,6 +114,7 @@ struct LoginView: View {
             self.settings.username = username
             self.settings.hash = hash
             self.settings.isOnboarded = true
+            self.presentationMode.wrappedValue.dismiss()
         }
     }
     

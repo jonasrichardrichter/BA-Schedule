@@ -43,6 +43,11 @@ struct SettingsView: View {
                             }
                             .padding()
                         }
+                        Button {
+                            self.showLogin = true
+                        } label: {
+                            Label("SETTINGS.USER.CHANGELOGIN", systemImage: "person.fill.and.arrow.left.and.arrow.right")
+                        }
                     } else {
                         Button {
                             self.showLogin = true
@@ -69,10 +74,11 @@ struct SettingsView: View {
                             }
                         }
                         .buttonStyle(.plain)
-                        .sheet(isPresented: self.$showLogin) {
-                            LoginView()
-                        }
+                        
                     }
+                }
+                .sheet(isPresented: self.$showLogin) {
+                    LoginView()
                 }
                 
                 // MARK: - More Functions
