@@ -11,6 +11,10 @@
 "SCHEDULE" = "Stundenplan";
 "SETTINGS" = "Einstellungen";
 
+// MARK: - Schedule
+
+"SCHEDULE.LAST.UPDATE %@" = "Letztes Update: %@";
+
 // MARK: - Onboarding
 "WELCOME_MESSAGE" = "Willkommen bei BA-Schedule!";
 "ONBOARDING.LOGIN.TITLE" = "Anmeldung bei CampusDual";
@@ -30,6 +34,7 @@
 "SETTINGS.NOTLOGGEDIN.DESCR" = "Um dich anzumelden hier tippen";
 "SETTINGS.LOGGEDIN.TITLE" = "Du bist angemeldet!";
 "SETTINGS.MOREFUNCTIONS.HEADER" = "Weitere Funktionen";
+"SETTINGS.MOREFUNCTIONS.OFFLINESUPPORT" = "Offline-Speicherung";
 
 // MARK: - Errors
 "ALERT_BUTTON_CANCEL" = "Abbrechen";
@@ -37,3 +42,7 @@
 // MARK: - General
 "GENERAL.UNKNOWN" = "Unbekannt";
 "GENERAL.COMINGSOON" = "Bald verfügbar";
+"GENERAL.BETA" = "Beta";
+"GENERAL.TRYAGAIN" = "Erneut versuchen";
+"GENERAL.NOCONNECTION.TITLE" = "Keine Netzwerkverbindung";
+"GENERAL.NOCONNECTION.MESSAGE" = "Bitte überprüfe deine Netzwerkverbindung und versuche es später erneut.";

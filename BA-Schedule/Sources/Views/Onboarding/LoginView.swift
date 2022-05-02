@@ -88,6 +88,7 @@ struct LoginView: View {
                 })
             }
         })
+        .navigationViewStyle(.stack)
     }
     
     // MARK: - Functions

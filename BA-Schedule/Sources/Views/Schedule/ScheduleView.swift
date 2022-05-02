@@ -15,6 +15,7 @@ struct ScheduleView: View {
     
     @State private var studyDays: [StudyDay] = []
     @State private var isInitialLoading: Bool = true
+    @State private var noNetwork: Bool = false
     
     @EnvironmentObject var settings: Settings
     
@@ -25,49 +26,40 @@ struct ScheduleView: View {
     // MARK: - Views
     
     var body: some View {
-        if self.settings.isOnboarded {
-            NavigationView {
-                if isInitialLoading {
-                    ProgressView()
-                        .progressViewStyle(.circular)
-                        .navigationTitle("SCHEDULE")
-                } else {
-                    List {
-                        ForEach(studyDays, id: \.self) { studyDay in
-                            Section {
-                                ForEach(studyDay.lessons, id: \.self) { lesson in
-                                    Lesson(lesson: lesson)
-                                }
-                            } header: {
-                                Text(studyDay.day.formatted(date: .complete, time: .omitted))
-                            }
-
-                        }
-                    }
-                    .listStyle(.plain)
-                    .navigationTitle("SCHEDULE")
-                }
-            }
+        NavigationView {
+            ScheduleListView(studyDays: self.$studyDays, lastOnlineUpdate: self.settings.lastOnlineUpdate)
+            .navigationTitle("SCHEDULE")
             .onAppear {
                 Task {
                     await self.loadSchedule()
                 }
             }
             .refreshable {
-                await self.loadSchedule()
-            }
-        } else {
-            NavigationView {
-                ProgressView()
-                    .progressViewStyle(.circular)
-                .navigationTitle("SCHEDULE")
+                await self.loadSchedule(forceUpdate: true)
             }
         }
+        .overlay(alignment: .center) {
+            if isInitialLoading || !self.settings.isOnboarded {
+                ProgressView()
+                    .progressViewStyle(.circular)
+            } else if noNetwork {
+                VStack {
+                    ErrorView(systemName: "wifi.exclamationmark", title: "GENERAL.NOCONNECTION.TITLE", message: "GENERAL.NOCONNECTION.MESSAGE")
+                    Button("GENERAL.TRYAGAIN") {
+                        Task {
+                            await self.loadSchedule(forceUpdate: true)
+                        }
+                    }
+                    .buttonStyle(.bordered)
+                }
+            }
+        }
+        
     }
     
     // MARK: - Functions
     
-    private func loadSchedule() async {
+    private func loadSchedule(forceUpdate: Bool = false) async {
         // Check if user is onboarded
         guard settings.isOnboarded == true else {
             self.logger.debug("User is not onboarded. No data is loaded.")
@@ -76,21 +68,53 @@ struct ScheduleView: View {
         
         self.logger.debug("Start loading schedule")
         
+        if noNetwork {
+            self.noNetwork = false
+            self.isInitialLoading = true
+            try? await Task.sleep(nanoseconds: 2 * 1_000_000_000)
+        }
+        
+        
         // Get credentials for login
         guard let username = self.settings.username else {
             return
         }
+        
         guard let hash = self.settings.hash else {
             return
         }
         
+        var data: [StudyDay] = []
+        
         do {
-            let data = try await self.service.loadSchedule(username: username, hash: hash)
-            self.studyDays = data
-            self.isInitialLoading = false
+            if self.settings.useOfflineSupport && Calendar.current.isDateInToday(self.settings.lastOnlineUpdate) && !forceUpdate {
+                self.logger.info("Using data from storage.")
+                data = try await self.service.loadFromJson()
+            } else {
+                self.logger.info("Loading data via network.")
+                data = try await self.service.loadSchedule(username: username, hash: hash)
+                self.settings.lastOnlineUpdate = Date()
+            }
         } catch {
             self.logger.error("An error happened: \(error.localizedDescription)")
+            
+            // No connection and lastOnlineUpdate wasn't today triggers loading from storage
+            if self.settings.useOfflineSupport {
+                do {
+                    data = try await self.service.loadFromJson()
+                } catch {
+                    self.logger.error("An error happened: \(error.localizedDescription)")
+                }
+            } else {
+                self.noNetwork = true
+                self.isInitialLoading = false
+                self.studyDays = []
+                return
+            }
         }
+        
+        self.studyDays = data
+        self.isInitialLoading = false
     }
 }
 
