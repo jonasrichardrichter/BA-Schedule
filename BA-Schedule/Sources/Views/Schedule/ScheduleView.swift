@@ -15,6 +15,7 @@ struct ScheduleView: View {
     
     @State private var studyDays: [StudyDay] = []
     @State private var isInitialLoading: Bool = true
+    @State private var noNetwork: Bool = false
     
     @EnvironmentObject var settings: Settings
     
@@ -27,20 +28,30 @@ struct ScheduleView: View {
     var body: some View {
         NavigationView {
             ScheduleListView(studyDays: self.$studyDays, lastOnlineUpdate: self.settings.lastOnlineUpdate)
-                .navigationTitle("SCHEDULE")
-                .onAppear {
-                    Task {
-                        await self.loadSchedule()
-                    }
+            .navigationTitle("SCHEDULE")
+            .onAppear {
+                Task {
+                    await self.loadSchedule()
                 }
-                .refreshable {
-                    await self.loadSchedule(forceUpdate: true)
-                }
+            }
+            .refreshable {
+                await self.loadSchedule(forceUpdate: true)
+            }
         }
         .overlay(alignment: .center) {
             if isInitialLoading || !self.settings.isOnboarded {
                 ProgressView()
                     .progressViewStyle(.circular)
+            } else if noNetwork {
+                VStack {
+                    ErrorView(systemName: "wifi.exclamationmark", title: "GENERAL.NOCONNECTION.TITLE", message: "GENERAL.NOCONNECTION.MESSAGE")
+                    Button("GENERAL.TRYAGAIN") {
+                        Task {
+                            await self.loadSchedule(forceUpdate: true)
+                        }
+                    }
+                    .buttonStyle(.bordered)
+                }
             }
         }
         
@@ -56,6 +67,13 @@ struct ScheduleView: View {
         }
         
         self.logger.debug("Start loading schedule")
+        
+        if noNetwork {
+            self.noNetwork = false
+            self.isInitialLoading = true
+            try? await Task.sleep(nanoseconds: 2 * 1_000_000_000)
+        }
+        
         
         // Get credentials for login
         guard let username = self.settings.username else {
@@ -88,6 +106,9 @@ struct ScheduleView: View {
                     self.logger.error("An error happened: \(error.localizedDescription)")
                 }
             } else {
+                self.noNetwork = true
+                self.isInitialLoading = false
+                self.studyDays = []
                 return
             }
         }
