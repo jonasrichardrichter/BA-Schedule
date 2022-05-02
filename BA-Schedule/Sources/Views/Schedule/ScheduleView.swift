@@ -79,7 +79,17 @@ struct ScheduleView: View {
             }
         } catch {
             self.logger.error("An error happened: \(error.localizedDescription)")
-            return
+            
+            // No connection and lastOnlineUpdate wasn't today triggers loading from storage
+            if self.settings.useOfflineSupport {
+                do {
+                    data = try await self.service.loadFromJson()
+                } catch {
+                    self.logger.error("An error happened: \(error.localizedDescription)")
+                }
+            } else {
+                return
+            }
         }
         
         self.studyDays = data
