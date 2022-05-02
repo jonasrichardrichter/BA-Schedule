@@ -51,6 +51,7 @@
 		416306CC27A6DC7100A92714 /* URL+BA-Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+BA-Schedule.swift"; sourceTree = "<group>"; };
 		416306CE27A6DD9600A92714 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		419408C1281FD1E700C60B9F /* Warning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Warning.swift; sourceTree = "<group>"; };
+		419408C3281FD32100C60B9F /* BA-Schedule.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BA-Schedule.entitlements"; sourceTree = "<group>"; };
 		41A437F227A6FEE700D0D43B /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		41A8BC352798B1FA0042DBB9 /* BA-Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BA-Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A8BC382798B1FA0042DBB9 /* BA_ScheduleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BA_ScheduleApp.swift; sourceTree = "<group>"; };
@@ -163,6 +164,7 @@
 		41A8BC372798B1FA0042DBB9 /* BA-Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				419408C3281FD32100C60B9F /* BA-Schedule.entitlements */,
 				412FB47C27B57D8900660427 /* Info.plist */,
 				41407EE727A9B8E400DBB55A /* Sources */,
 				41407EE627A9B8DA00DBB55A /* Resources */,
@@ -451,6 +453,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BA-Schedule/BA-Schedule.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BA-Schedule/Resources/Preview Content\"";
@@ -472,9 +475,11 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "eu.jonasrichter.BA-schedule";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -483,6 +488,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BA-Schedule/BA-Schedule.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BA-Schedule/Resources/Preview Content\"";
@@ -504,9 +510,11 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "eu.jonasrichter.BA-schedule";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

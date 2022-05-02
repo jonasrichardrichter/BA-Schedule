@@ -23,6 +23,7 @@ struct ContentView: View {
                     Image(systemName: "calendar.day.timeline.leading")
                     Text("SCHEDULE")
                 }
+                .navigationViewStyle(.stack)
             
             // MARK: - Settings
             SettingsView()
@@ -30,11 +31,14 @@ struct ContentView: View {
                     Image(systemName: "gear")
                     Text("SETTINGS")
                 }
+                .navigationViewStyle(.stack)
         }
         // MARK: - Onboarding Sheet
-        .fullScreenCover(isPresented: self.$settings.isOnboarded.not, content: {
-                OnboardingView()
-            })
+        .sheet(isPresented: self.$settings.isOnboarded.not, content: {
+            OnboardingView()
+                .interactiveDismissDisabled()
+                .navigationViewStyle(.stack)
+        })
     }
 }
 
