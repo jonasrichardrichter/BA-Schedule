@@ -1,23 +1,25 @@
 {
-  "pins" : [
-    {
-      "identity" : "keychain-item",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/objcio/keychain-item",
-      "state" : {
-        "revision" : "563fc973ee4c1fcdea646630f847a241025da3c4",
-        "version" : "0.1.0"
+  "object": {
+    "pins": [
+      {
+        "package": "KeychainItem",
+        "repositoryURL": "https://github.com/objcio/keychain-item",
+        "state": {
+          "branch": null,
+          "revision": "563fc973ee4c1fcdea646630f847a241025da3c4",
+          "version": "0.1.0"
+        }
+      },
+      {
+        "package": "swift-log",
+        "repositoryURL": "https://github.com/apple/swift-log",
+        "state": {
+          "branch": null,
+          "revision": "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
+          "version": "1.4.2"
+        }
       }
-    },
-    {
-      "identity" : "swift-log",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-log",
-      "state" : {
-        "revision" : "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
-        "version" : "1.4.2"
-      }
-    }
-  ],
-  "version" : 2
+    ]
+  },
+  "version": 1
 }

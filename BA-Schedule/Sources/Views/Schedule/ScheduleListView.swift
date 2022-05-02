@@ -24,9 +24,11 @@ struct ScheduleListView: View {
                     Text(studyDay.day.formatted(date: .complete, time: .omitted))
                 })
             }
-            Section(content: {}, footer: {
-                Text("SCHEDULE.LAST.UPDATE \(self.lastOnlineUpdate.formatted())")
-            })
+            if !self.studyDays.isEmpty {
+                Section(content: {}, footer: {
+                    Text("SCHEDULE.LAST.UPDATE \(self.lastOnlineUpdate.formatted())")
+                })
+            }
         }
         .listStyle(.insetGrouped)
     }

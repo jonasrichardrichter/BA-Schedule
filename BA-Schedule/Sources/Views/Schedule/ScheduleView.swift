@@ -25,32 +25,25 @@ struct ScheduleView: View {
     // MARK: - Views
     
     var body: some View {
-        if self.settings.isOnboarded {
-            NavigationView {
-                if isInitialLoading {
-                    ProgressView()
-                        .progressViewStyle(.circular)
-                        .navigationTitle("SCHEDULE")
-                } else {
-                    ScheduleListView(studyDays: self.$studyDays, lastOnlineUpdate: self.settings.lastOnlineUpdate)
-                        .navigationTitle("SCHEDULE")
+        NavigationView {
+            ScheduleListView(studyDays: self.$studyDays, lastOnlineUpdate: self.settings.lastOnlineUpdate)
+                .navigationTitle("SCHEDULE")
+                .onAppear {
+                    Task {
+                        await self.loadSchedule()
+                    }
                 }
-            }
-            .onAppear {
-                Task {
-                    await self.loadSchedule()
+                .refreshable {
+                    await self.loadSchedule(forceUpdate: true)
                 }
-            }
-            .refreshable {
-                await self.loadSchedule(forceUpdate: true)
-            }
-        } else {
-            NavigationView {
+        }
+        .overlay(alignment: .center) {
+            if isInitialLoading || !self.settings.isOnboarded {
                 ProgressView()
                     .progressViewStyle(.circular)
-                .navigationTitle("SCHEDULE")
             }
         }
+        
     }
     
     // MARK: - Functions
@@ -86,6 +79,7 @@ struct ScheduleView: View {
             }
         } catch {
             self.logger.error("An error happened: \(error.localizedDescription)")
+            return
         }
         
         self.studyDays = data
