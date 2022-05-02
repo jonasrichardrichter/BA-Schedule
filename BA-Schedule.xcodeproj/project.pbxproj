@@ -31,6 +31,7 @@
 		41A8BC3D2798B1FB0042DBB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A8BC3C2798B1FB0042DBB9 /* Assets.xcassets */; };
 		41A8BC402798B1FB0042DBB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A8BC3F2798B1FB0042DBB9 /* Preview Assets.xcassets */; };
 		41A8BC4B2798B7210042DBB9 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 41A8BC4A2798B7210042DBB9 /* Logging */; };
+		41F1A5F928202ED50039F6D6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 41F1A5F828202ED50039F6D6 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		41A8BC3C2798B1FB0042DBB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41A8BC3F2798B1FB0042DBB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		41ED2F11281FB8A900FA12C8 /* CampusDualKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CampusDualKit; path = Packages/CampusDualKit; sourceTree = "<group>"; };
+		41F1A5F828202ED50039F6D6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = "BA-Schedule/Settings.bundle"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 		41A8BC2C2798B1FA0042DBB9 = {
 			isa = PBXGroup;
 			children = (
+				41F1A5F828202ED50039F6D6 /* Settings.bundle */,
 				41A8BC372798B1FA0042DBB9 /* BA-Schedule */,
 				41ED2F10281FB8A900FA12C8 /* Packages */,
 				41A8BC362798B1FA0042DBB9 /* Products */,
@@ -228,6 +231,7 @@
 				41A8BC312798B1FA0042DBB9 /* Sources */,
 				41A8BC322798B1FA0042DBB9 /* Frameworks */,
 				41A8BC332798B1FA0042DBB9 /* Resources */,
+				41F1A5FA2820304E0039F6D6 /* LicensePlist */,
 			);
 			buildRules = (
 			);
@@ -284,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41F1A5F928202ED50039F6D6 /* Settings.bundle in Resources */,
 				41A8BC402798B1FB0042DBB9 /* Preview Assets.xcassets in Resources */,
 				416306B927A6BC3000A92714 /* Localizable.strings in Resources */,
 				41A8BC3D2798B1FB0042DBB9 /* Assets.xcassets in Resources */,
@@ -291,6 +296,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		41F1A5FA2820304E0039F6D6 /* LicensePlist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = LicensePlist;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n/usr/local/bin/license-plist --output-path $PRODUCT_NAME/Settings.bundle --markdown-path ACKNOWLEDGES.md --add-version-numbers --force\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		41A8BC312798B1FA0042DBB9 /* Sources */ = {

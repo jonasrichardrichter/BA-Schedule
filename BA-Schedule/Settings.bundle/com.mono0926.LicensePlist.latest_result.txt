@@ -1,0 +1,13 @@
+name: CampusDualKit, nameSpecified: , owner: jns-rchtr, version: 0.2.0
+
+name: CampusDualKit, nameSpecified: , owner: jns-rchtr, version: 0.2.0
+
+name: CampusDualKit, nameSpecified: , owner: jns-rchtr, version: 0.2.0
+
+name: keychain-item, nameSpecified: KeychainItem, owner: objcio, version: 0.1.0
+
+name: swift-log, nameSpecified: swift-log, owner: apple, version: 1.4.2
+
+add-version-numbers: true
+
+LicensePlist Version: 3.0.7
