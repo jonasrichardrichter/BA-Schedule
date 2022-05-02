@@ -10,6 +10,6 @@ import Foundation
 internal extension URL {
     enum BaSchedule {
         static let github = URL(string: "https://github.com/jns-rchtr/BA-Schedule/")!
-        static let informationHash = URL(string: "blob/main/BETA_NOTES.md", relativeTo: Self.github)!
+        static let informationHash = URL(string: "blob/main/LOGIN_INFORMATION.md", relativeTo: Self.github)!
     }
 }
