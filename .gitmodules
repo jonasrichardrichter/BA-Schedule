@@ -1,0 +1,3 @@
+[submodule "Packages/CampusDualKit"]
+	path = Packages/CampusDualKit
+	url = https://jns-rchtr@github.com/jns-rchtr/CampusDualKit

@@ -1,15 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "campusdualkit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/jns-rchtr/CampusDualKit",
-      "state" : {
-        "revision" : "8f582414f43e9bb8f6f1fcaf19574cb04e0a7857",
-        "version" : "0.2.1"
-      }
-    },
-    {
       "identity" : "keychain-item",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/objcio/keychain-item",
