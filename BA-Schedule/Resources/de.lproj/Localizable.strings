@@ -36,6 +36,8 @@
 "SETTINGS.USER.CHANGELOGIN" = "Anmeldedaten ändern";
 "SETTINGS.MOREFUNCTIONS.HEADER" = "Weitere Funktionen";
 "SETTINGS.MOREFUNCTIONS.OFFLINESUPPORT" = "Offline-Speicherung";
+"SETTINGS.IDEAS" = "Ideen für weitere Funktionen?";
+"SETTINGS.IDEAS.BUTTON" = "Vorschlag per E-Mail senden";
 
 // MARK: - Errors
 "ALERT_BUTTON_CANCEL" = "Abbrechen";

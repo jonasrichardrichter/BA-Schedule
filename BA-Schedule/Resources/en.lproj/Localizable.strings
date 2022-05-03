@@ -1,0 +1,51 @@
+/* 
+  Localizable.strings
+  BA-Schedule
+
+  Created by Jonas Richard Richter on 30.01.22.
+  
+*/
+
+// MARK: - Tabs
+
+"SCHEDULE" = "Schedule";
+"SETTINGS" = "Settings";
+
+// MARK: - Schedule
+
+"SCHEDULE.LAST.UPDATE %@" = "Last update: %@";
+
+// MARK: - Onboarding
+"WELCOME_MESSAGE" = "Welcome to BA-Schedule!";
+"ONBOARDING.LOGIN.TITLE" = "Sign In with CampusDual";
+"ONBOARDING.LOGIN.MATRIKEL" = "Matriculation number";
+"ONBOARDING.LOGIN.HASH" = "Authentication hash";
+"ONBOARDING.LOGIN.BUTTON" = "Sign in";
+"LOGIN_ERROR_TITLE" = "An error occurred while signing in";
+"FEATURE_1_TITLE" = "Übersichtliche Darstellung";
+"FEATURE_1_DESCR" = "Your schedule is easy, neat and available on the go.";
+"FEATURE_2_TITLE" = "Focused on privacy";
+"FEATURE_2_DESCR" = "The app was developed with privacy in mind.";
+
+// MARK: - Settings
+"SETTINGS.GITHUB-LINK" = "See the source code on GitHub";
+"SETTINGS.ABOUT" = "About this App";
+"SETTINGS.NOTLOGGEDIN.TITLE" = "You are currently not signed in.";
+"SETTINGS.NOTLOGGEDIN.DESCR" = "Tap here to sign in";
+"SETTINGS.LOGGEDIN.TITLE" = "You are signed in!";
+"SETTINGS.USER.CHANGELOGIN" = "Change credentials";
+"SETTINGS.MOREFUNCTIONS.HEADER" = "More features";
+"SETTINGS.MOREFUNCTIONS.OFFLINESUPPORT" = "Offline-Saving";
+"SETTINGS.IDEAS" = "Ideas for more features?";
+"SETTINGS.IDEAS.BUTTON" = "Send proposal via email";
+
+// MARK: - Errors
+"ALERT_BUTTON_CANCEL" = "Cancel";
+
+// MARK: - General
+"GENERAL.UNKNOWN" = "Unknown";
+"GENERAL.COMINGSOON" = "Coming soon";
+"GENERAL.BETA" = "Beta";
+"GENERAL.TRYAGAIN" = "Try again";
+"GENERAL.NOCONNECTION.TITLE" = "No network connection";
+"GENERAL.NOCONNECTION.MESSAGE" = "Please check your network connection and try again later.";

@@ -88,12 +88,12 @@ struct SettingsView: View {
                         Label("SETTINGS.MOREFUNCTIONS.OFFLINESUPPORT", systemImage: "internaldrive")
                     }
                     VStack(alignment: .center) {
-                        Text("Ideen für weitere Funktionen?")
+                        Text("SETTINGS.IDEAS")
                             .font(.headline)
                         Button {
                             UIApplication.shared.open(URL(string: "mailto:kontakt@jonasrichter.eu?subject=Vorschlag%20zu%20BA-Schedule")!)
                         } label: {
-                            Label("Vorschlag per E-Mail senden", systemImage: "envelope")
+                            Label("SETTINGS.IDEAS.BUTTON", systemImage: "envelope")
                         }
                         .buttonStyle(.bordered)
 
