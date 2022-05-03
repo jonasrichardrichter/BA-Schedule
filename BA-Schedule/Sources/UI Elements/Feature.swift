@@ -20,7 +20,6 @@ struct Feature: View {
     
     var body: some View {
         HStack(spacing: 20) {
-            Spacer()
             
             Image(systemName: systemImage)
                 .resizable()
@@ -36,9 +35,6 @@ struct Feature: View {
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
-            
-            Spacer()
-            
         }
     }
 }

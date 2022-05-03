@@ -30,6 +30,7 @@ struct OnboardingView: View {
                     
                     Feature(systemImage: "lock.shield", iconColor: .yellow, title: "FEATURE_2_TITLE", description: "FEATURE_2_DESCR")
                 }
+                .padding(.horizontal)
                 
                 Spacer()
                 

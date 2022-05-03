@@ -314,7 +314,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n/usr/local/bin/license-plist --output-path $PRODUCT_NAME/Settings.bundle --markdown-path ACKNOWLEDGES.md --add-version-numbers --force\nfi\n";
+			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n/usr/local/bin/license-plist --output-path $PRODUCT_NAME/Settings.bundle --markdown-path ACKNOWLEDGES.md --add-version-numbers\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -554,7 +554,7 @@
 				41A8BC422798B1FB0042DBB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		41A8BC432798B1FB0042DBB9 /* Build configuration list for PBXNativeTarget "BA-Schedule" */ = {
 			isa = XCConfigurationList;
@@ -563,7 +563,7 @@
 				41A8BC452798B1FB0042DBB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 

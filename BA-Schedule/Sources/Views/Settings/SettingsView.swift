@@ -87,6 +87,19 @@ struct SettingsView: View {
                     Toggle(isOn: self.$settings.useOfflineSupport) {
                         Label("SETTINGS.MOREFUNCTIONS.OFFLINESUPPORT", systemImage: "internaldrive")
                     }
+                    VStack(alignment: .center) {
+                        Text("Ideen für weitere Funktionen?")
+                            .font(.headline)
+                        Button {
+                            UIApplication.shared.open(URL(string: "mailto:kontakt@jonasrichter.eu?subject=Vorschlag%20zu%20BA-Schedule")!)
+                        } label: {
+                            Label("Vorschlag per E-Mail senden", systemImage: "envelope")
+                        }
+                        .buttonStyle(.bordered)
+
+                    }
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.vertical)
                 } header: {
                     Text("SETTINGS.MOREFUNCTIONS.HEADER")
                 }
