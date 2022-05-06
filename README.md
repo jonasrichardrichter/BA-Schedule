@@ -7,6 +7,8 @@
 
 This is a simple application to see your schedule from the Berufsakademie Sachsen on the go. 
 
+<a href="https://apps.apple.com/de/app/ba-schedule/id1562677951?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1651536000&h=673ea0a6fd24405ea930ee4dbe346572" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
+
 >The app is still in an very early state of development. Updates are coming more or less frequently.
 
 ## Acknowledgments
