@@ -87,6 +87,10 @@ struct SettingsView: View {
                     Toggle(isOn: self.$settings.useOfflineSupport) {
                         Label("SETTINGS.MOREFUNCTIONS.OFFLINESUPPORT", systemImage: "internaldrive")
                     }
+                    Toggle(isOn: self.$settings.showInstructor) {
+                        Label("SETTINGS.MOREFUNCTIONS.SHOWINSTRUCTUR", systemImage: "person.circle")
+                    }
+                    
                     VStack(alignment: .center) {
                         Text("SETTINGS.IDEAS")
                             .font(.headline)

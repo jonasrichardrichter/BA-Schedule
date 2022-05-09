@@ -17,6 +17,7 @@ class Settings: ObservableObject {
         self.lastVersionUsed = UserDefaults.standard.object(forKey: "lastVersionUsed") as? String ??  Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         self.useOfflineSupport = UserDefaults.standard.object(forKey: "useOfflineSupport") as? Bool ?? true
         self.lastOnlineUpdate = UserDefaults.standard.object(forKey: "lastOnlineUpdate") as? Date ?? Date(timeIntervalSince1970: 1)
+        self.showInstructor = UserDefaults.standard.object(forKey: "showInstructor") as? Bool ?? true
     }
     
     // MARK: - Login information
@@ -52,6 +53,14 @@ class Settings: ObservableObject {
     @Published var lastOnlineUpdate: Date {
         didSet {
             UserDefaults.standard.set(lastOnlineUpdate, forKey: "lastOnlineUpdate")
+        }
+    }
+    
+    // MARK: - Customization
+    
+    @Published var showInstructor: Bool {
+        didSet {
+            UserDefaults.standard.set(showInstructor, forKey: "showInstructor")
         }
     }
     
