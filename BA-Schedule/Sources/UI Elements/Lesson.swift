@@ -11,6 +11,7 @@ import CampusDualKit
 struct Lesson: View {
     
     @EnvironmentObject var settings: Settings
+    @Environment(\.horizontalSizeClass) var sizeClass
     
     var lesson: CampusDualKit.Lesson
     
@@ -24,12 +25,15 @@ struct Lesson: View {
             VStack(alignment: .leading) {
                 Text(lesson.title)
                     .font(.headline)
-                VStack(alignment: .leading){
+                AdaptiveStack(horizontalAlignment: .leading) {
                     HStack {
                         Image(systemName: "building.2.crop.circle")
                         Text(lesson.room)
                     }
                     if self.settings.showInstructor {
+                        if self.sizeClass == .regular {
+                            Text("・")
+                        }
                         HStack {
                             Image(systemName: "person.circle")
                             Text(lesson.instructor)
