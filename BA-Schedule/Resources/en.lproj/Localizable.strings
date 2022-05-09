@@ -36,6 +36,7 @@
 "SETTINGS.USER.CHANGELOGIN" = "Change credentials";
 "SETTINGS.MOREFUNCTIONS.HEADER" = "More features";
 "SETTINGS.MOREFUNCTIONS.OFFLINESUPPORT" = "Offline-Saving";
+"SETTINGS.MOREFUNCTIONS.SHOWINSTRUCTUR" = "Show instructor";
 "SETTINGS.IDEAS" = "Ideas for more features?";
 "SETTINGS.IDEAS.BUTTON" = "Send proposal via email";
 

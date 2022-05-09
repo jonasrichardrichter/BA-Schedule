@@ -12,6 +12,7 @@ struct ScheduleListView: View {
     
     @Binding public var studyDays: [StudyDay]
     @State public var lastOnlineUpdate: Date
+    @EnvironmentObject var settings: Settings
     
     var body: some View {
         List {
@@ -38,5 +39,6 @@ struct ScheduleListView_Previews: PreviewProvider {
     static var previews: some View {
         ScheduleListView(studyDays: .constant(StudyDay.demoData), lastOnlineUpdate: Date())
             .environment(\.locale, .init(identifier: "de"))
+            .environmentObject(Settings())
     }
 }
