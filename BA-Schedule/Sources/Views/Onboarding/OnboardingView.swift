@@ -43,7 +43,7 @@ struct OnboardingView: View {
                     HStack {
                         Spacer()
                         
-                        Text("Fortfahren")
+                        Text("GENERAL.CONTINUE")
                             .font(.headline)
                             .foregroundColor(.white)
                         
