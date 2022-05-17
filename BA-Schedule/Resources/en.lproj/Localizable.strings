@@ -22,7 +22,7 @@
 "ONBOARDING.LOGIN.HASH" = "Authentication hash";
 "ONBOARDING.LOGIN.BUTTON" = "Sign in";
 "LOGIN_ERROR_TITLE" = "An error occurred while signing in";
-"FEATURE_1_TITLE" = "Übersichtliche Darstellung";
+"FEATURE_1_TITLE" = "Clear visualization";
 "FEATURE_1_DESCR" = "Your schedule is easy, neat and available on the go.";
 "FEATURE_2_TITLE" = "Focused on privacy";
 "FEATURE_2_DESCR" = "The app was developed with privacy in mind.";
@@ -48,5 +48,6 @@
 "GENERAL.COMINGSOON" = "Coming soon";
 "GENERAL.BETA" = "Beta";
 "GENERAL.TRYAGAIN" = "Try again";
+"GENERAL.CONTINUE" = "Continue";
 "GENERAL.NOCONNECTION.TITLE" = "No network connection";
 "GENERAL.NOCONNECTION.MESSAGE" = "Please check your network connection and try again later.";

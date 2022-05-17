@@ -47,6 +47,7 @@
 "GENERAL.UNKNOWN" = "Unbekannt";
 "GENERAL.COMINGSOON" = "Bald verfügbar";
 "GENERAL.BETA" = "Beta";
+"GENERAL.CONTINUE" = "Fortfahren";
 "GENERAL.TRYAGAIN" = "Erneut versuchen";
 "GENERAL.NOCONNECTION.TITLE" = "Keine Netzwerkverbindung";
 "GENERAL.NOCONNECTION.MESSAGE" = "Bitte überprüfe deine Netzwerkverbindung und versuche es später erneut.";
