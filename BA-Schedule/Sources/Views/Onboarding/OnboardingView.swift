@@ -22,6 +22,7 @@ struct OnboardingView: View {
                 Text("WELCOME_MESSAGE")
                     .font(.largeTitle)
                     .fontWeight(.bold)
+                    .padding(.horizontal)
                 
                 Spacer()
                 
@@ -29,8 +30,7 @@ struct OnboardingView: View {
                     Feature(systemImage: "calendar.day.timeline.leading", iconColor: .blue, title: "FEATURE_1_TITLE", description: "FEATURE_1_DESCR")
                     
                     Feature(systemImage: "lock.shield", iconColor: .yellow, title: "FEATURE_2_TITLE", description: "FEATURE_2_DESCR")
-                }
-                .padding(.horizontal)
+                }.padding(.horizontal, 30)
                 
                 Spacer()
                 
