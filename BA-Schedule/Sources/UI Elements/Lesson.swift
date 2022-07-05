@@ -44,7 +44,6 @@ struct Lesson: View {
                     if !self.lesson.remarks.isEmpty {
                         HStack {
                             Image(systemName: "info.circle")
-                            //Text(lesson.instructor)
                             Text(lesson.remarks)
                         }
                     }
