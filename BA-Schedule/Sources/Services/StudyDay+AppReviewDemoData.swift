@@ -19,9 +19,9 @@ internal extension StudyDay {
             let demoDate = Calendar.current.date(byAdding: dateComponent, to: Date()) ?? Date()
             
             let studyDay = StudyDay(day: demoDate, lessons: [
-                CampusDualKit.Lesson(title: "Mathe", start: Calendar.current.date(bySettingHour: 7, minute: 45, second: 0, of: demoDate) ?? Date(), end: Calendar.current.date(bySettingHour: 9, minute: 15, second: 0, of: demoDate) ?? Date(), description: "Mathe Modul", room: "R201", instructor: "Prof. Dr. Mustermann"),
-                CampusDualKit.Lesson(title: "Informatik", start: Calendar.current.date(bySettingHour: 9, minute: 45, second: 0, of: demoDate) ?? Date(), end: Calendar.current.date(bySettingHour: 11, minute: 15, second: 0, of: demoDate) ?? Date(), description: "Informatik Modul", room: "R203", instructor: "Frau Programmiererin"),
-                CampusDualKit.Lesson(title: "Englisch", start: Calendar.current.date(bySettingHour: 11, minute: 45, second: 0, of: demoDate) ?? Date(), end: Calendar.current.date(bySettingHour: 13, minute: 15, second: 0, of: demoDate) ?? Date(), description: "Englisch Modul", room: "R104", instructor: "EVL")
+                CampusDualKit.Lesson(title: "Mathe", start: Calendar.current.date(bySettingHour: 7, minute: 45, second: 0, of: demoDate) ?? Date(), end: Calendar.current.date(bySettingHour: 9, minute: 15, second: 0, of: demoDate) ?? Date(), description: "Mathe Modul", room: "R201", instructor: "Prof. Dr. Mustermann", remarks: "Gruppe A"),
+                CampusDualKit.Lesson(title: "Informatik", start: Calendar.current.date(bySettingHour: 9, minute: 45, second: 0, of: demoDate) ?? Date(), end: Calendar.current.date(bySettingHour: 11, minute: 15, second: 0, of: demoDate) ?? Date(), description: "Informatik Modul", room: "R203", instructor: "Frau Programmiererin", remarks: "Gruppe B"),
+                CampusDualKit.Lesson(title: "Englisch", start: Calendar.current.date(bySettingHour: 11, minute: 45, second: 0, of: demoDate) ?? Date(), end: Calendar.current.date(bySettingHour: 13, minute: 15, second: 0, of: demoDate) ?? Date(), description: "Englisch Modul", room: "R104", instructor: "EVL", remarks: "Gruppe C")
             ])
             array.append(studyDay)
         }
