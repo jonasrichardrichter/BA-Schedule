@@ -18,6 +18,7 @@ class Settings: ObservableObject {
         self.useOfflineSupport = UserDefaults.standard.object(forKey: "useOfflineSupport") as? Bool ?? true
         self.lastOnlineUpdate = UserDefaults.standard.object(forKey: "lastOnlineUpdate") as? Date ?? Date(timeIntervalSince1970: 1)
         self.showInstructor = UserDefaults.standard.object(forKey: "showInstructor") as? Bool ?? true
+        self.showRemarks = UserDefaults.standard.object(forKey: "showRemarks") as? Bool ?? true
     }
     
     // MARK: - Login information
@@ -63,5 +64,12 @@ class Settings: ObservableObject {
             UserDefaults.standard.set(showInstructor, forKey: "showInstructor")
         }
     }
+    
+    @Published var showRemarks: Bool {
+        didSet {
+            UserDefaults.standard.set(showInstructor, forKey: "showRemarks")
+        }
+    }
+    
     
 }

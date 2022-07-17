@@ -22,7 +22,7 @@ struct Lesson: View {
              .frame(width: 6, height: 40)
              .foregroundColor(.blue) */
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: nil) {
                 Text(lesson.title)
                     .font(.headline)
                 AdaptiveStack(horizontalAlignment: .leading) {
@@ -41,7 +41,7 @@ struct Lesson: View {
                             Text(lesson.instructor)
                         }
                     }
-                    if !self.lesson.remarks.isEmpty {
+                    if (!self.lesson.remarks.isEmpty && self.settings.showRemarks) {
                         HStack {
                             Image(systemName: "info.circle")
                             Text(lesson.remarks)
