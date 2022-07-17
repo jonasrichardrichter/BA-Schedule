@@ -90,6 +90,9 @@ struct SettingsView: View {
                     Toggle(isOn: self.$settings.showInstructor) {
                         Label("SETTINGS.MOREFUNCTIONS.SHOWINSTRUCTUR", systemImage: "person.circle")
                     }
+                    Toggle(isOn: self.$settings.showRemarks) {
+                        Label("SETTINGS.MOREFUNCTIONS.SHOWREMARKS", systemImage: "info.circle")
+                    }
                     
                     VStack(alignment: .center) {
                         Text("SETTINGS.IDEAS")
