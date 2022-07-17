@@ -26,9 +26,11 @@ struct Lesson: View {
                 Text(lesson.title)
                     .font(.headline)
                 AdaptiveStack(horizontalAlignment: .leading) {
-                    HStack {
-                        Image(systemName: "building.2.crop.circle")
-                        Text(lesson.room)
+                    if !self.lesson.room.isEmpty {
+                        HStack {
+                            Image(systemName: "building.2.crop.circle")
+                            Text(lesson.room)
+                        }
                     }
                     if self.settings.showInstructor {
                         if self.sizeClass == .regular {
@@ -37,6 +39,12 @@ struct Lesson: View {
                         HStack {
                             Image(systemName: "person.circle")
                             Text(lesson.instructor)
+                        }
+                    }
+                    if !self.lesson.remarks.isEmpty {
+                        HStack {
+                            Image(systemName: "info.circle")
+                            Text(lesson.remarks)
                         }
                     }
                 }.foregroundColor(.secondary)
