@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4108E52228B614960037BA44 /* NoCalendarPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108E52128B614960037BA44 /* NoCalendarPermissionView.swift */; };
 		4111ED0427B4451A00C7FF8D /* Binding+not.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4111ED0327B4451900C7FF8D /* Binding+not.swift */; };
 		4129F38C2798B81100A46155 /* Logger+CustomInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129F38B2798B81100A46155 /* Logger+CustomInit.swift */; };
 		4135B66628B414110008D573 /* ExportToCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4135B66528B414110008D573 /* ExportToCalendarView.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4108E52128B614960037BA44 /* NoCalendarPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCalendarPermissionView.swift; sourceTree = "<group>"; };
 		4111ED0327B4451900C7FF8D /* Binding+not.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+not.swift"; sourceTree = "<group>"; };
 		4129F38B2798B81100A46155 /* Logger+CustomInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+CustomInit.swift"; sourceTree = "<group>"; };
 		412FB47C27B57D8900660427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			children = (
 				41C1556328B3D63F00977721 /* GrantCalendarPermissionView.swift */,
 				4135B66528B414110008D573 /* ExportToCalendarView.swift */,
+				4108E52128B614960037BA44 /* NoCalendarPermissionView.swift */,
 			);
 			path = CalendarExport;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				41407EED27A9BC9E00DBB55A /* ServiceWrapper.swift in Sources */,
 				416306C827A6D67800A92714 /* Settings.swift in Sources */,
 				4111ED0427B4451A00C7FF8D /* Binding+not.swift in Sources */,
+				4108E52228B614960037BA44 /* NoCalendarPermissionView.swift in Sources */,
 				4153B45C28290495001E28E6 /* AdaptiveStack.swift in Sources */,
 				4154BA2A2819786600907AD5 /* ScheduleAppError.swift in Sources */,
 				416306CF27A6DD9600A92714 /* LoginView.swift in Sources */,
