@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4111ED0427B4451A00C7FF8D /* Binding+not.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4111ED0327B4451900C7FF8D /* Binding+not.swift */; };
 		4129F38C2798B81100A46155 /* Logger+CustomInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129F38B2798B81100A46155 /* Logger+CustomInit.swift */; };
+		4135B66628B414110008D573 /* ExportToCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4135B66528B414110008D573 /* ExportToCalendarView.swift */; };
 		41407EED27A9BC9E00DBB55A /* ServiceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41407EEC27A9BC9E00DBB55A /* ServiceWrapper.swift */; };
 		41407EEF27A9C31600DBB55A /* StudyDay+AppReviewDemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41407EEE27A9C31600DBB55A /* StudyDay+AppReviewDemoData.swift */; };
 		4153B45C28290495001E28E6 /* AdaptiveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4153B45B28290495001E28E6 /* AdaptiveStack.swift */; };
@@ -32,6 +33,7 @@
 		41A8BC3D2798B1FB0042DBB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A8BC3C2798B1FB0042DBB9 /* Assets.xcassets */; };
 		41A8BC402798B1FB0042DBB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A8BC3F2798B1FB0042DBB9 /* Preview Assets.xcassets */; };
 		41A8BC4B2798B7210042DBB9 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 41A8BC4A2798B7210042DBB9 /* Logging */; };
+		41C1556428B3D63F00977721 /* GrantCalendarPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1556328B3D63F00977721 /* GrantCalendarPermissionView.swift */; };
 		41F1A5F928202ED50039F6D6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 41F1A5F828202ED50039F6D6 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,7 @@
 		4111ED0327B4451900C7FF8D /* Binding+not.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+not.swift"; sourceTree = "<group>"; };
 		4129F38B2798B81100A46155 /* Logger+CustomInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+CustomInit.swift"; sourceTree = "<group>"; };
 		412FB47C27B57D8900660427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4135B66528B414110008D573 /* ExportToCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportToCalendarView.swift; sourceTree = "<group>"; };
 		41407EEC27A9BC9E00DBB55A /* ServiceWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceWrapper.swift; sourceTree = "<group>"; };
 		41407EEE27A9C31600DBB55A /* StudyDay+AppReviewDemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StudyDay+AppReviewDemoData.swift"; sourceTree = "<group>"; };
 		4153B45B28290495001E28E6 /* AdaptiveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveStack.swift; sourceTree = "<group>"; };
@@ -62,6 +65,7 @@
 		41A8BC3A2798B1FA0042DBB9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		41A8BC3C2798B1FB0042DBB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41A8BC3F2798B1FB0042DBB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		41C1556328B3D63F00977721 /* GrantCalendarPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantCalendarPermissionView.swift; sourceTree = "<group>"; };
 		41ED2F11281FB8A900FA12C8 /* CampusDualKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CampusDualKit; path = Packages/CampusDualKit; sourceTree = "<group>"; };
 		41F1A5F828202ED50039F6D6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = "BA-Schedule/Settings.bundle"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +201,7 @@
 		41A8BC462798B6CD0042DBB9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				41C1556228B3D62A00977721 /* CalendarExport */,
 				4153B45A28290485001E28E6 /* General */,
 				416306C027A6BDF300A92714 /* Onboarding */,
 				416306BF27A6BDEE00A92714 /* Settings */,
@@ -223,6 +228,15 @@
 				4111ED0327B4451900C7FF8D /* Binding+not.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		41C1556228B3D62A00977721 /* CalendarExport */ = {
+			isa = PBXGroup;
+			children = (
+				41C1556328B3D63F00977721 /* GrantCalendarPermissionView.swift */,
+				4135B66528B414110008D573 /* ExportToCalendarView.swift */,
+			);
+			path = CalendarExport;
 			sourceTree = "<group>";
 		};
 		41ED2F10281FB8A900FA12C8 /* Packages */ = {
@@ -341,12 +355,14 @@
 				41A8BC3B2798B1FA0042DBB9 /* ContentView.swift in Sources */,
 				41A8BC392798B1FA0042DBB9 /* BA_ScheduleApp.swift in Sources */,
 				416306C227A6BE0100A92714 /* SettingsView.swift in Sources */,
+				4135B66628B414110008D573 /* ExportToCalendarView.swift in Sources */,
 				41407EEF27A9C31600DBB55A /* StudyDay+AppReviewDemoData.swift in Sources */,
 				4154BA26281969CA00907AD5 /* ScheduleListView.swift in Sources */,
 				41A437F327A6FEE700D0D43B /* AboutView.swift in Sources */,
 				415FEC0B281FE62000D74DE9 /* ErrorView.swift in Sources */,
 				416306C627A6C25500A92714 /* Feature.swift in Sources */,
 				416306CD27A6DC7100A92714 /* URL+BA-Schedule.swift in Sources */,
+				41C1556428B3D63F00977721 /* GrantCalendarPermissionView.swift in Sources */,
 				4129F38C2798B81100A46155 /* Logger+CustomInit.swift in Sources */,
 				41407EED27A9BC9E00DBB55A /* ServiceWrapper.swift in Sources */,
 				416306C827A6D67800A92714 /* Settings.swift in Sources */,

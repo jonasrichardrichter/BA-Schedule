@@ -17,6 +17,8 @@ struct ScheduleView: View {
     @State private var isInitialLoading: Bool = true
     @State private var noNetwork: Bool = false
     
+    @State private var showCalendarSheet = false
+    
     @EnvironmentObject var settings: Settings
     
     private var logger: Logger = Logger.init(for: "ScheduleView")
@@ -37,6 +39,21 @@ struct ScheduleView: View {
             .refreshable {
                 await self.loadSchedule(forceUpdate: true)
             }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        showCalendarSheet = true
+                    } label: {
+                        Label {
+                            Text("Stundenplan übertragen")
+                        } icon: {
+                            Image(systemName: "calendar.badge.plus")
+                        }
+
+                    }
+
+                }
+            }
         }
         .overlay(alignment: .center) {
             if isInitialLoading || !self.settings.isOnboarded {
@@ -53,6 +70,9 @@ struct ScheduleView: View {
                     .buttonStyle(.bordered)
                 }
             }
+        }
+        .sheet(isPresented: $showCalendarSheet) {
+            ExportToCalendarView()
         }
         
     }

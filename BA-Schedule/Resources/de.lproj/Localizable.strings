@@ -52,3 +52,8 @@
 "GENERAL.TRYAGAIN" = "Erneut versuchen";
 "GENERAL.NOCONNECTION.TITLE" = "Keine Netzwerkverbindung";
 "GENERAL.NOCONNECTION.MESSAGE" = "Bitte überprüfe deine Netzwerkverbindung und versuche es später erneut.";
+
+
+// MARK: - Permissions
+"PERMISSON.CALENDAR.TITLE" = "Kalendarzugriff benötigt";
+"PERMISSON.CALENDAR.DESCR" = "Um deinen Stundenplan in deinen Kalendar zu übertragen ist deine Zustimmung erforderlich. Der Stundenplan wird in einem neuen Kalendar angelegt. Es werden **keine** anderen Termine ausgelesen.";
