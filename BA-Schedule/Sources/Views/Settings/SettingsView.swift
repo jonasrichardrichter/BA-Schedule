@@ -110,23 +110,6 @@ struct SettingsView: View {
                 } header: {
                     Text("SETTINGS.MOREFUNCTIONS.HEADER")
                 }
-                
-                
-                // MARK: - About
-                Section {
-                    Button {
-                        UIApplication.shared.open(URL.BaSchedule.github)
-                    } label: {
-                        Label("SETTINGS.GITHUB-LINK", systemImage: "text.and.command.macwindow")
-                    }
-                    
-                    NavigationLink(destination: {
-                        AboutView()
-                    }, label: {
-                        Label("SETTINGS.ABOUT", systemImage: "questionmark.app")
-                            .foregroundColor(.primary)
-                    })
-                }
             }
             .listStyle(.insetGrouped)
             .navigationTitle("SETTINGS")
