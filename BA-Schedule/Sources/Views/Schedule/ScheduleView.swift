@@ -19,6 +19,7 @@ struct ScheduleView: View {
     
     @State private var showCalendarSheet = false
     @State private var showAboutThisApp = false
+    @State private var showLoginSheet = false
     
     @EnvironmentObject var settings: Settings
     
@@ -53,7 +54,18 @@ struct ScheduleView: View {
                             }
                         }
                         Divider()
-                        Menu("More") {
+                        Button {
+                            UIApplication.shared.open(URL(string: "mailto:kontakt@jonasrichter.eu?subject=Vorschlag%20zu%20BA-Schedule")!)
+                        } label: {
+                            Label("SETTINGS.IDEAS.BUTTON", systemImage: "envelope")
+                        }
+                        Divider()
+                        Button {
+                            showLoginSheet = true
+                        } label: {
+                            Label("SETTINGS.USER.CHANGELOGIN", systemImage: "person.fill.and.arrow.left.and.arrow.right")
+                        }
+                        Menu("GENERAL_MENU_MORE") {
                             Button {
                                 UIApplication.shared.open(URL.BaSchedule.github)
                             } label: {
@@ -94,10 +106,19 @@ struct ScheduleView: View {
             }
         }
         .sheet(isPresented: $showCalendarSheet) {
-            ExportToCalendarView()
+            if #available(iOS 16.0, *) {
+                ExportToCalendarView()
+                    .presentationDetents([.medium])
+                    .presentationDragIndicator(.visible)
+            } else {
+                ExportToCalendarView()
+            }
         }
         .sheet(isPresented: $showAboutThisApp) {
             AboutView()
+        }
+        .sheet(isPresented: $showLoginSheet) {
+            LoginView()
         }
         
     }
@@ -167,5 +188,6 @@ struct ScheduleView_Previews: PreviewProvider {
     static var previews: some View {
         ScheduleView()
             .environmentObject(Settings())
+            .environment(\.locale, .init(identifier: "de"))
     }
 }

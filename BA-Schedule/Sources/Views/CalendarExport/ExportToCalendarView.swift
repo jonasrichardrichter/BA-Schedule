@@ -15,6 +15,8 @@ struct ExportToCalendarView: View {
     
     private var logger = Logger(for: "ExportToCalendarView")
     
+    private var ekStore = EKEventStore()
+    
     @State private var showPermissionSheet = false
     @State private var showErrorSheet = false
     
@@ -74,25 +76,23 @@ struct ExportToCalendarView: View {
     }
     
     func getBACalenderOrCreate() -> EKCalendar {
-        let store = EKEventStore()
-        
-        let userCalenders = store.calendars(for: .event)
+        let userCalenders = ekStore.calendars(for: .event)
         
         let baCalenders = userCalenders.filter { calender in
             return calender.title == "BA-Schedule"
         }
         
         if (baCalenders.count == 0) {
-            let calendar = EKCalendar(for: .event, eventStore: store)
+            let calendar = EKCalendar(for: .event, eventStore: ekStore)
             
             calendar.title = "BA-Schedule"
             calendar.cgColor = UIColor(Color.red).cgColor
-            calendar.source = store.defaultCalendarForNewEvents?.source!
+            calendar.source = ekStore.defaultCalendarForNewEvents?.source!
             
             self.logger.info("Created calendar: \(calendar.debugDescription)")
             
             do {
-                try store.saveCalendar(calendar, commit: true)
+                try ekStore.saveCalendar(calendar, commit: true)
                 logger.info("Saved new calendar")
             } catch {
                 logger.error("Error while saving new calendar: \(error.localizedDescription)")
@@ -107,7 +107,6 @@ struct ExportToCalendarView: View {
     
     func exportToCalendar() async {
         let calender = getBACalenderOrCreate()
-        let store = EKEventStore()
         
         let service = ServiceWrapper()
         var schedule: [StudyDay] = []
@@ -120,7 +119,7 @@ struct ExportToCalendarView: View {
         
         for studyDay in schedule {
             for lesson in studyDay.lessons {
-                let event = EKEvent(eventStore: store)
+                let event = EKEvent(eventStore: ekStore)
                 
                 event.calendar = calender
                 event.title = lesson.title
@@ -130,16 +129,13 @@ struct ExportToCalendarView: View {
                 event.availability = .busy
                 
                 do {
-                    try store.save(event, span: .thisEvent)
+                    try ekStore.save(event, span: .thisEvent, commit: true)
                 } catch {
                     logger.error("An error happend: \(error.localizedDescription)")
                     #warning("Implement error dialog")
                 }
             }
         }
-        
-        
-        
     }
 }
 

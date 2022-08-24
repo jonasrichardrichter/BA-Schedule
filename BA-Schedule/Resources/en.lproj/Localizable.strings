@@ -39,7 +39,7 @@
 "SETTINGS.MOREFUNCTIONS.SHOWINSTRUCTUR" = "Show instructor";
 "SETTINGS.MOREFUNCTIONS.SHOWREMARKS" = "Show remarks";
 "SETTINGS.IDEAS" = "Ideas for more features?";
-"SETTINGS.IDEAS.BUTTON" = "Send proposal via email";
+"SETTINGS.IDEAS.BUTTON" = "Send feature proposal via email";
 
 // MARK: - About
 "ABOUT.THANKSTO" = "Thanks for helping out";
@@ -55,3 +55,4 @@
 "GENERAL.CONTINUE" = "Continue";
 "GENERAL.NOCONNECTION.TITLE" = "No network connection";
 "GENERAL.NOCONNECTION.MESSAGE" = "Please check your network connection and try again later.";
+"GENERAL_MENU_MORE" = "More content";
