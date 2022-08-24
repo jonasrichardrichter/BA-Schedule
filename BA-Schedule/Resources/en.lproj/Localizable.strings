@@ -26,6 +26,8 @@
 "FEATURE_1_DESCR" = "Your schedule is easy, neat and available on the go.";
 "FEATURE_2_TITLE" = "Focused on privacy";
 "FEATURE_2_DESCR" = "The app was developed with privacy in mind.";
+"FEATURE_CALENDAR_EXPORT" = "Easy schedule export";
+"FEATURE_CALENDAR_EXPORT_DESCR" = "Export your schedule to your personal calendar.";
 
 // MARK: - Settings
 "SETTINGS.GITHUB-LINK" = "See the source code on GitHub";

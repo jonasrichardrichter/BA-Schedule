@@ -26,6 +26,8 @@
 "FEATURE_1_DESCR" = "Dein Stundenplan ganz einfach, ordentlich und mobil verfügbar.";
 "FEATURE_2_TITLE" = "Auslegung auf Datenschutz";
 "FEATURE_2_DESCR" = "Die App wurde mit einem Fokus auf Datenschutz entwickelt.";
+"FEATURE_CALENDAR_EXPORT" = "Einfacher Export des Stundenplan";
+"FEATURE_CALENDAR_EXPORT_DESCR" = "Exportiere deinen Studenplan mit einem Klick in deinen eigenen Kalender.";
 
 // MARK: - Settings
 "SETTINGS.GITHUB-LINK" = "Zum Quelltext auf GitHub";

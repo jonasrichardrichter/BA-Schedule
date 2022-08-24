@@ -13,7 +13,6 @@ struct OnboardingView: View {
     
     @EnvironmentObject var settings: Settings
     
-    
     // MARK: - View
     
     var body: some View {
@@ -23,6 +22,7 @@ struct OnboardingView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding(.horizontal)
+                    .padding(.top, 42)
                 
                 Spacer()
                 
@@ -30,6 +30,7 @@ struct OnboardingView: View {
                     Feature(systemImage: "calendar.day.timeline.leading", iconColor: .blue, title: "FEATURE_1_TITLE", description: "FEATURE_1_DESCR")
                     
                     Feature(systemImage: "lock.shield", iconColor: .yellow, title: "FEATURE_2_TITLE", description: "FEATURE_2_DESCR")
+                    Feature(systemImage: "calendar.badge.plus", iconColor: .red, title: "FEATURE_CALENDAR_EXPORT", description: "FEATURE_CALENDAR_EXPORT_DESCR")
                 }.padding(.horizontal, 30)
                 
                 Spacer()

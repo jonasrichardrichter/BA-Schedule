@@ -97,12 +97,12 @@
 		41407EE727A9B8E400DBB55A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				41407EEB27A9BC8E00DBB55A /* Services */,
-				41A8BC482798B6EE0042DBB9 /* Extensions */,
-				41A8BC472798B6D60042DBB9 /* UI Elements */,
-				41A8BC462798B6CD0042DBB9 /* Views */,
 				41A8BC382798B1FA0042DBB9 /* BA_ScheduleApp.swift */,
 				41A8BC3A2798B1FA0042DBB9 /* ContentView.swift */,
+				41A8BC482798B6EE0042DBB9 /* Extensions */,
+				41407EEB27A9BC8E00DBB55A /* Services */,
+				41A8BC472798B6D60042DBB9 /* UI Elements */,
+				41A8BC462798B6CD0042DBB9 /* Views */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -183,8 +183,8 @@
 			children = (
 				419408C3281FD32100C60B9F /* BA-Schedule.entitlements */,
 				412FB47C27B57D8900660427 /* Info.plist */,
-				41407EE727A9B8E400DBB55A /* Sources */,
 				41407EE627A9B8DA00DBB55A /* Resources */,
+				41407EE727A9B8E400DBB55A /* Sources */,
 			);
 			path = "BA-Schedule";
 			sourceTree = "<group>";
@@ -203,8 +203,8 @@
 				41C1556228B3D62A00977721 /* CalendarExport */,
 				4153B45A28290485001E28E6 /* General */,
 				416306C027A6BDF300A92714 /* Onboarding */,
-				416306BF27A6BDEE00A92714 /* Settings */,
 				416306BC27A6BCAA00A92714 /* Schedule */,
+				416306BF27A6BDEE00A92714 /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
