@@ -18,6 +18,7 @@ struct ScheduleView: View {
     @State private var noNetwork: Bool = false
     
     @State private var showCalendarSheet = false
+    @State private var showAboutThisApp = false
     
     @EnvironmentObject var settings: Settings
     
@@ -41,15 +42,36 @@ struct ScheduleView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        showCalendarSheet = true
-                    } label: {
-                        Label {
-                            Text("Stundenplan übertragen")
-                        } icon: {
-                            Image(systemName: "calendar.badge.plus")
+                    Menu {
+                        Button {
+                            showCalendarSheet = true
+                        } label: {
+                            Label {
+                                Text("Stundenplan übertragen")
+                            } icon: {
+                                Image(systemName: "calendar.badge.plus")
+                            }
                         }
-
+                        Divider()
+                        Menu("More") {
+                            Button {
+                                UIApplication.shared.open(URL.BaSchedule.github)
+                            } label: {
+                                Label("SETTINGS.GITHUB-LINK", systemImage: "text.and.command.macwindow")
+                            }
+                            Button {
+                                showAboutThisApp = true
+                            } label: {
+                                Label {
+                                    Text("SETTINGS.ABOUT")
+                                } icon: {
+                                    Image(systemName: "questionmark.app")
+                                }
+                            }
+                        }
+                        
+                    } label: {
+                        Label("SETTINGS.MOREFUNCTIONS.HEADER", systemImage: "ellipsis.circle")
                     }
 
                 }
@@ -73,6 +95,9 @@ struct ScheduleView: View {
         }
         .sheet(isPresented: $showCalendarSheet) {
             ExportToCalendarView()
+        }
+        .sheet(isPresented: $showAboutThisApp) {
+            AboutView()
         }
         
     }

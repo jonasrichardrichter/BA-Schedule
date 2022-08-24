@@ -124,7 +124,7 @@ struct ExportToCalendarView: View {
                 
                 event.calendar = calender
                 event.title = lesson.title
-                event.location = lesson.room + " - " + lesson.remarks
+                event.location = lesson.room + " " + lesson.remarks
                 event.startDate = lesson.start
                 event.endDate = lesson.end
                 event.availability = .busy

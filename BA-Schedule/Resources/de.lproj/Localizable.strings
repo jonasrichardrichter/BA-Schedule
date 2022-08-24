@@ -41,6 +41,9 @@
 "SETTINGS.IDEAS" = "Ideen für weitere Funktionen?";
 "SETTINGS.IDEAS.BUTTON" = "Vorschlag per E-Mail senden";
 
+// MARK: - About
+"ABOUT.THANKSTO" = "Danke für die Mithilfe an";
+
 // MARK: - Errors
 "ALERT_BUTTON_CANCEL" = "Abbrechen";
 

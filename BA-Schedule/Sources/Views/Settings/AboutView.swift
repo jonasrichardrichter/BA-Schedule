@@ -52,6 +52,13 @@ struct AboutView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .center)
             })
+            
+            Section {
+                Text("Florian Schmidt")
+                    .badge("@greybaron")
+            } header: {
+                Text("ABOUT.THANKSTO")
+            }
         }
         .listStyle(.insetGrouped)
         .navigationTitle("SETTINGS.ABOUT")
