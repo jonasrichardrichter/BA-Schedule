@@ -32,44 +32,38 @@ struct ScheduleView: View {
     var body: some View {
         NavigationView {
             ScheduleListView(studyDays: self.$studyDays, lastOnlineUpdate: self.settings.lastOnlineUpdate)
-            .navigationTitle("SCHEDULE")
-            .onAppear {
-                Task {
-                    await self.loadSchedule()
+                .navigationTitle("SCHEDULE")
+                .onAppear {
+                    Task {
+                        await self.loadSchedule()
+                    }
                 }
-            }
-            .refreshable {
-                await self.loadSchedule(forceUpdate: true)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Menu {
-                        Button {
-                            showCalendarSheet = true
-                        } label: {
-                            Label {
-                                Text("Stundenplan übertragen")
-                            } icon: {
-                                Image(systemName: "calendar.badge.plus")
-                            }
-                        }
-                        Divider()
-                        Button {
-                            UIApplication.shared.open(URL(string: "mailto:kontakt@jonasrichter.eu?subject=Vorschlag%20zu%20BA-Schedule")!)
-                        } label: {
-                            Label("SETTINGS.IDEAS.BUTTON", systemImage: "envelope")
-                        }
-                        Divider()
-                        Button {
-                            showLoginSheet = true
-                        } label: {
-                            Label("SETTINGS.USER.CHANGELOGIN", systemImage: "person.fill.and.arrow.left.and.arrow.right")
-                        }
-                        Menu("GENERAL_MENU_MORE") {
+                .refreshable {
+                    await self.loadSchedule(forceUpdate: true)
+                }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Menu {
                             Button {
-                                UIApplication.shared.open(URL.BaSchedule.github)
+                                showCalendarSheet = true
                             } label: {
-                                Label("SETTINGS.GITHUB-LINK", systemImage: "text.and.command.macwindow")
+                                Label {
+                                    Text("Stundenplan exportieren")
+                                } icon: {
+                                    Image(systemName: "calendar.badge.plus")
+                                }
+                            }
+                            Divider()
+                            Button {
+                                UIApplication.shared.open(URL(string: "mailto:kontakt@jonasrichter.eu?subject=Vorschlag%20zu%20BA-Schedule")!)
+                            } label: {
+                                Label("SETTINGS.IDEAS.BUTTON", systemImage: "envelope")
+                            }
+                            Divider()
+                            Button {
+                                showLoginSheet = true
+                            } label: {
+                                Label("SETTINGS.USER.CHANGELOGIN", systemImage: "person.fill.and.arrow.left.and.arrow.right")
                             }
                             Button {
                                 showAboutThisApp = true
@@ -80,14 +74,13 @@ struct ScheduleView: View {
                                     Image(systemName: "questionmark.app")
                                 }
                             }
+                            
+                        } label: {
+                            Label("SETTINGS.MOREFUNCTIONS.HEADER", systemImage: "ellipsis.circle")
                         }
                         
-                    } label: {
-                        Label("SETTINGS.MOREFUNCTIONS.HEADER", systemImage: "ellipsis.circle")
                     }
-
                 }
-            }
         }
         .overlay(alignment: .center) {
             if isInitialLoading || !self.settings.isOnboarded {

@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct AboutView: View {
-    
+    @Environment(\.presentationMode) var presentationMode
     var version: String {
             Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         }
-
     var buildNumber: String {
             Bundle.main.infoDictionary?["CFBundleVersion"] as! String
         }
+
     
     var body: some View {
         List {
+            
+
             Section(content: {
                 VStack(alignment: .leading) {
                     Text("Icon")
@@ -33,13 +35,24 @@ struct AboutView: View {
                     Text("Jonas Richard Richter")
                 }
             }, header: {
+                VStack(alignment: .trailing) {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Label("Close", systemImage: "xmark")
+                    }
+                    .buttonStyle(.bordered)
+                    .labelStyle(.iconOnly)
+                    .buttonBorderShape(.capsule)
+                }
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                
                 VStack(alignment: .center) {
                     Image("Icon")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 120)
                         .cornerRadius(30)
-                        .padding(.top)
                         .shadow(radius: 10)
                     Text("BA-Schedule")
                         .font(.largeTitle)
@@ -52,6 +65,14 @@ struct AboutView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .center)
             })
+            
+            Section {
+                Button {
+                    UIApplication.shared.open(URL.BaSchedule.github)
+                } label: {
+                    Label("SETTINGS.GITHUB-LINK", systemImage: "text.and.command.macwindow")
+                }
+            }
             
             Section {
                 Text("Florian Schmidt")
