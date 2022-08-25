@@ -120,6 +120,7 @@ struct ScheduleView: View {
         .sheet(isPresented: $showLoginSheet) {
             LoginView()
         }
+        .navigationViewStyle(.stack)
         
     }
     

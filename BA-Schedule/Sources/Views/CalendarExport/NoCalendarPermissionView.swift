@@ -9,7 +9,24 @@ import SwiftUI
 
 struct NoCalendarPermissionView: View {
     var body: some View {
-        Text("No Permission")
+        NavigationView {
+            VStack {
+                Spacer()
+                Image(systemName: "xmark.diamond")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 86)
+                    .foregroundColor(.red)
+                Text("Der Zugriff auf den Kalender ist nicht möglich.")
+                    .font(.title)
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .padding()
+                Spacer()
+                Spacer()
+                    
+            }
+        }
     }
 }
 

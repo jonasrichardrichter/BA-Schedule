@@ -55,9 +55,9 @@ struct OnboardingView: View {
                     .cornerRadius(10)
                 }).padding()
             }
+            .navigationBarHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationBarHidden(true)
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

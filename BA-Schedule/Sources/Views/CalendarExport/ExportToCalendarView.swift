@@ -12,8 +12,8 @@ import UIKit
 import CampusDualKit
 
 struct ExportToCalendarView: View {
-    
     private var logger = Logger(for: "ExportToCalendarView")
+    @Environment(\.presentationMode) var presentationMode
     
     private var ekStore = EKEventStore()
     
@@ -53,7 +53,9 @@ struct ExportToCalendarView: View {
                 .sheet(isPresented: $showPermissionSheet) {
                     GrantCalendarPermissionView()
                 }
-                .sheet(isPresented: $showErrorSheet) {
+                .sheet(isPresented: $showErrorSheet, onDismiss: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
                     NoCalendarPermissionView()
                 }
         }

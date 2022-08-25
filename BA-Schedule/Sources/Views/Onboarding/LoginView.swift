@@ -29,7 +29,7 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(content: {
+                Section {
                     TextField("ONBOARDING.LOGIN.MATRIKEL", text: $username)
                         .textInputAutocapitalization(.never)
                         .textContentType(.username)
@@ -38,7 +38,7 @@ struct LoginView: View {
                     SecureField("ONBOARDING.LOGIN.HASH", text: $hash)
                         .textInputAutocapitalization(.never)
                         .textContentType(.password)
-                }, header: {
+                } header: {
                     VStack {
                         Image(systemName: "key.fill")
                             .resizable()
@@ -55,7 +55,7 @@ struct LoginView: View {
                     }
                         .frame(maxWidth: .infinity, alignment: .center)
                         .padding()
-                })
+                }
                 
                 Section {
                     // MARK: - Button
@@ -79,17 +79,17 @@ struct LoginView: View {
                     }
                 }
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarHidden(true)
-        }
-        .toolbar(content: {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Link(destination: URL.BaSchedule.informationHash, label: {
-                    Image(systemName: "questionmark.circle")
-                })
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Link(destination: URL.BaSchedule.informationHash, label: {
+                        Label("More information", systemImage: "questionmark.circle")
+                    })
+                }
             }
-        })
+            .navigationBarTitleDisplayMode(.inline)
+        }
         .navigationViewStyle(.stack)
+
     }
     
     // MARK: - Functions
