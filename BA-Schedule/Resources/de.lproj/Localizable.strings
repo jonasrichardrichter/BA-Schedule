@@ -48,6 +48,7 @@
 
 // MARK: - Errors
 "ALERT_BUTTON_CANCEL" = "Abbrechen";
+"ERROR_ALERT" = "Es ist ein Fehler aufgetreten.";
 
 // MARK: - General
 "GENERAL.UNKNOWN" = "Unbekannt";

@@ -21,6 +21,9 @@ struct ExportToCalendarView: View {
     @State private var showErrorSheet = false
     @State private var showSuccessAlert = false
     
+    @State private var showErrorAlert = false
+    @State private var error: Error?
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -66,6 +69,13 @@ struct ExportToCalendarView: View {
                     presentationMode.wrappedValue.dismiss()
                 }
             }
+            .alert("ERROR_ALERT", isPresented: $showErrorAlert, presenting: error) { _ in
+                Button("GENERAL_CANCEL", role: .cancel) {
+                    presentationMode.wrappedValue.dismiss()
+                }
+            } message: { error in
+                Text(error.localizedDescription)
+            }
         }
         .onAppear {
             checkPermission()
@@ -106,7 +116,8 @@ struct ExportToCalendarView: View {
                 logger.info("Saved new calendar")
             } catch {
                 logger.error("Error while saving new calendar: \(error.localizedDescription)")
-#warning("Implement error dialog")
+                showErrorAlert = true
+                self.error = error
             }
             
             return calendar
@@ -115,25 +126,17 @@ struct ExportToCalendarView: View {
         return baCalenders.first!
     }
     
-    func clearCalendarFromNow(_ calendar: EKCalendar, store: EKEventStore) {
+    func clearCalendarFromNow(_ calendar: EKCalendar, store: EKEventStore) throws {
         logger.info("Clearing the calendar...")
         let predicate = store.predicateForEvents(withStart: Date.now, end: Date.now.addingTimeInterval(31536000), calendars: [calendar])
         
         let events = store.events(matching: predicate)
         for event in events {
-            do {
-                try store.remove(event, span: .thisEvent, commit: false)
-            } catch {
-                logger.error("An error happend: \(error.localizedDescription)")
-            }
+            try store.remove(event, span: .thisEvent, commit: false)
         }
         
-        do {
-            try store.commit()
-            logger.info("Calendar cleared!")
-        } catch {
-            logger.error("An error happend: \(error.localizedDescription)")
-        }
+        try store.commit()
+        logger.info("Calendar cleared!")
     }
     
     func exportToCalendar() async {
@@ -144,12 +147,13 @@ struct ExportToCalendarView: View {
         
         do {
             schedule = try await service.loadFromJson()
+            try clearCalendarFromNow(calender, store: ekStore)
         } catch {
             logger.error("An error happend: \(error.localizedDescription)")
-#warning("implement error dialog")
+            showErrorAlert = true
+            self.error = error
+            return
         }
-        
-        clearCalendarFromNow(calender, store: ekStore)
         
         for studyDay in schedule {
             for lesson in studyDay.lessons {
@@ -167,7 +171,9 @@ struct ExportToCalendarView: View {
                     showSuccessAlert = true
                 } catch {
                     logger.error("An error happend: \(error.localizedDescription)")
-#warning("Implement error dialog")
+                    showErrorAlert = true
+                    self.error = error
+                    return
                 }
             }
         }
