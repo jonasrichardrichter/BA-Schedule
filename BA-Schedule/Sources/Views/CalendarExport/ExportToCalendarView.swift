@@ -19,6 +19,7 @@ struct ExportToCalendarView: View {
     
     @State private var showPermissionSheet = false
     @State private var showErrorSheet = false
+    @State private var showSuccessAlert = false
     
     var body: some View {
         NavigationView {
@@ -38,7 +39,7 @@ struct ExportToCalendarView: View {
                 
                 Button {
                     Task {
-                       await exportToCalendar()
+                        await exportToCalendar()
                     }
                 } label: {
                     Text("Exportieren")
@@ -46,20 +47,25 @@ struct ExportToCalendarView: View {
                         .frame(height: 32)
                         .frame(maxWidth: .infinity)
                 }
-                    .buttonStyle(.borderedProminent)
-
+                .buttonStyle(.borderedProminent)
+                
             }
-                .padding()
-                .sheet(isPresented: $showPermissionSheet, onDismiss: {
-                    checkPermission()
-                }) {
-                    GrantCalendarPermissionView()
-                }
-                .sheet(isPresented: $showErrorSheet, onDismiss: {
+            .padding()
+            .sheet(isPresented: $showPermissionSheet, onDismiss: {
+                checkPermission()
+            }) {
+                GrantCalendarPermissionView()
+            }
+            .sheet(isPresented: $showErrorSheet, onDismiss: {
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                NoCalendarPermissionView()
+            }
+            .alert("CALENDAR_EXPORT_SUCCESS", isPresented: $showSuccessAlert) {
+                Button("GERNAL_FINISH", role: .cancel) {
                     presentationMode.wrappedValue.dismiss()
-                }) {
-                    NoCalendarPermissionView()
                 }
+            }
         }
         .onAppear {
             checkPermission()
@@ -109,17 +115,41 @@ struct ExportToCalendarView: View {
         return baCalenders.first!
     }
     
+    func clearCalendarFromNow(_ calendar: EKCalendar, store: EKEventStore) {
+        logger.info("Clearing the calendar...")
+        let predicate = store.predicateForEvents(withStart: Date.now, end: Date.now.addingTimeInterval(31536000), calendars: [calendar])
+        
+        let events = store.events(matching: predicate)
+        for event in events {
+            do {
+                try store.remove(event, span: .thisEvent, commit: false)
+            } catch {
+                logger.error("An error happend: \(error.localizedDescription)")
+            }
+        }
+        
+        do {
+            try store.commit()
+            logger.info("Calendar cleared!")
+        } catch {
+            logger.error("An error happend: \(error.localizedDescription)")
+        }
+    }
+    
     func exportToCalendar() async {
         let calender = getBACalenderOrCreate()
         
         let service = ServiceWrapper()
         var schedule: [StudyDay] = []
+        
         do {
             schedule = try await service.loadFromJson()
         } catch {
             logger.error("An error happend: \(error.localizedDescription)")
-            #warning("implement error dialog")
+#warning("implement error dialog")
         }
+        
+        clearCalendarFromNow(calender, store: ekStore)
         
         for studyDay in schedule {
             for lesson in studyDay.lessons {
@@ -134,9 +164,10 @@ struct ExportToCalendarView: View {
                 
                 do {
                     try ekStore.save(event, span: .thisEvent, commit: true)
+                    showSuccessAlert = true
                 } catch {
                     logger.error("An error happend: \(error.localizedDescription)")
-                    #warning("Implement error dialog")
+#warning("Implement error dialog")
                 }
             }
         }

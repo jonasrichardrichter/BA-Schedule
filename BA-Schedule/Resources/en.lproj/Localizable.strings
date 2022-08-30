@@ -59,10 +59,12 @@
 "GENERAL.NOCONNECTION.MESSAGE" = "Please check your network connection and try again later.";
 "GENERAL_MENU_MORE" = "More content";
 "GENERAL_CLOSE" = "Close";
+"GENERAL_FINISH" = "Finish";
 
-// MARK: - Permissions
+// MARK: - Calendar export
 "PERMISSON.CALENDAR.TITLE" = "Calendar access required";
 "PERMISSON.CALENDAR.DESCR" = "In order to transfer your timetable to your calendar, your consent is required. The timetable is created in a new calendar. **No** other dates will be read out.";
 "ERROR_NO_CALENDAR_ACCESS" = "Calendar access not possible";
 "ERROR_NO_CALENDAR_ACCESS_DESCR" = "Apparently, the app was not allowed sufficient permissions. To allow access to the calendar, please switch to the settings.";
 "ERROR_NO_CALENDAR_ACCESS_TO_SETTINGS" = "To the settings";
+"CALENDAR_EXPORT_SUCCESS" = "The calendar export was successfull";

@@ -34,6 +34,8 @@ struct GrantCalendarPermissionView: View {
                 }.padding()
                 
                 Spacer()
+                Spacer()
+                Spacer()
                 
                 VStack {
                     Button {
@@ -50,7 +52,8 @@ struct GrantCalendarPermissionView: View {
                     .buttonBorderShape(.capsule)
                     .buttonStyle(.borderedProminent)
                 }
-                .padding(.bottom)
+                
+                Spacer()
             }
         }
     }
