@@ -58,8 +58,12 @@
 "GENERAL.NOCONNECTION.TITLE" = "Keine Netzwerkverbindung";
 "GENERAL.NOCONNECTION.MESSAGE" = "Bitte überprüfe deine Netzwerkverbindung und versuche es später erneut.";
 "GENERAL_MENU_MORE" = "Weitere Inhalte";
+"GENERAL_CLOSE" = "Schließen";
 
 
 // MARK: - Permissions
 "PERMISSON.CALENDAR.TITLE" = "Kalendarzugriff benötigt";
 "PERMISSON.CALENDAR.DESCR" = "Um deinen Stundenplan in deinen Kalendar zu übertragen ist deine Zustimmung erforderlich. Der Stundenplan wird in einem neuen Kalendar angelegt. Es werden **keine** anderen Termine ausgelesen.";
+"ERROR_NO_CALENDAR_ACCESS" = "Kalendarzugriff nicht möglich";
+"ERROR_NO_CALENDAR_ACCESS_DESCR" = "Anscheinend wurden der App nicht die ausreichenden Berechtigungen gestattet. Um den Zugriff auf den Kalendar zu erlauben, wechsle bitte in die Einstellungen.";
+"ERROR_NO_CALENDAR_ACCESS_TO_SETTINGS" = "Zu den Einstellungen";

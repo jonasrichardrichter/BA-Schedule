@@ -8,23 +8,36 @@
 import SwiftUI
 
 struct NoCalendarPermissionView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationView {
             VStack {
                 Spacer()
-                Image(systemName: "xmark.diamond")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 86)
-                    .foregroundColor(.red)
-                Text("Der Zugriff auf den Kalender ist nicht möglich.")
-                    .font(.title)
-                    .bold()
-                    .multilineTextAlignment(.center)
-                    .padding()
+                ErrorView(systemName: "xmark.diamond", color: .red, title: "ERROR_NO_CALENDAR_ACCESS", message: "ERROR_NO_CALENDAR_ACCESS_DESCR")
                 Spacer()
+                Button {
+                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                } label: {
+                    Label("ERROR_NO_CALENDAR_ACCESS_TO_SETTINGS", systemImage: "gear")
+                }
+                .buttonStyle(.borderedProminent)
+                .padding(.horizontal)
+                
                 Spacer()
-                    
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Label("GENERAL_CLOSE", systemImage: "xmark")
+                    }
+                    .labelStyle(.titleOnly)
+                    .buttonStyle(.bordered)
+                    .buttonBorderShape(.capsule)
+
+                }
             }
         }
     }
@@ -33,5 +46,6 @@ struct NoCalendarPermissionView: View {
 struct NoCalendarPermissionView_Previews: PreviewProvider {
     static var previews: some View {
         NoCalendarPermissionView()
+            .environment(\.locale, .init(identifier: "de"))
     }
 }

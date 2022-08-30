@@ -49,8 +49,8 @@ struct GrantCalendarPermissionView: View {
                     .tint(.blue)
                     .buttonBorderShape(.capsule)
                     .buttonStyle(.borderedProminent)
-                    
                 }
+                .padding(.bottom)
             }
         }
     }

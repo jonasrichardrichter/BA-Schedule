@@ -22,6 +22,7 @@ struct ScheduleView: View {
     @State private var showLoginSheet = false
     
     @EnvironmentObject var settings: Settings
+    @Environment(\.presentationMode) var presentationMode
     
     private var logger: Logger = Logger.init(for: "ScheduleView")
     

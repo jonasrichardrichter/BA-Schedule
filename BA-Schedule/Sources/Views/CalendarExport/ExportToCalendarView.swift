@@ -50,7 +50,9 @@ struct ExportToCalendarView: View {
 
             }
                 .padding()
-                .sheet(isPresented: $showPermissionSheet) {
+                .sheet(isPresented: $showPermissionSheet, onDismiss: {
+                    checkPermission()
+                }) {
                     GrantCalendarPermissionView()
                 }
                 .sheet(isPresented: $showErrorSheet, onDismiss: {
