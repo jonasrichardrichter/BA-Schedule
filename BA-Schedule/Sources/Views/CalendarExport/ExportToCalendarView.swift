@@ -65,7 +65,7 @@ struct ExportToCalendarView: View {
                 NoCalendarPermissionView()
             }
             .alert("CALENDAR_EXPORT_SUCCESS", isPresented: $showSuccessAlert) {
-                Button("GERNAL_FINISH", role: .cancel) {
+                Button("GENERAL_FINISH", role: .cancel) {
                     presentationMode.wrappedValue.dismiss()
                 }
             }
