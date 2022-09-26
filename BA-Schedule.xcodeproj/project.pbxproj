@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4100A29228E244DD0076CFC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4100A29428E244DD0076CFC5 /* InfoPlist.strings */; };
 		4108E52228B614960037BA44 /* NoCalendarPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108E52128B614960037BA44 /* NoCalendarPermissionView.swift */; };
 		4111ED0427B4451A00C7FF8D /* Binding+not.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4111ED0327B4451900C7FF8D /* Binding+not.swift */; };
 		4129F38C2798B81100A46155 /* Logger+CustomInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129F38B2798B81100A46155 /* Logger+CustomInit.swift */; };
@@ -38,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4100A29328E244DD0076CFC5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4100A29528E244E10076CFC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4108E52128B614960037BA44 /* NoCalendarPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCalendarPermissionView.swift; sourceTree = "<group>"; };
 		4111ED0327B4451900C7FF8D /* Binding+not.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+not.swift"; sourceTree = "<group>"; };
 		4129F38B2798B81100A46155 /* Logger+CustomInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+CustomInit.swift"; sourceTree = "<group>"; };
@@ -182,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				419408C3281FD32100C60B9F /* BA-Schedule.entitlements */,
+				4100A29428E244DD0076CFC5 /* InfoPlist.strings */,
 				412FB47C27B57D8900660427 /* Info.plist */,
 				41407EE627A9B8DA00DBB55A /* Resources */,
 				41407EE727A9B8E400DBB55A /* Sources */,
@@ -320,6 +324,7 @@
 				41A8BC402798B1FB0042DBB9 /* Preview Assets.xcassets in Resources */,
 				416306B927A6BC3000A92714 /* Localizable.strings in Resources */,
 				41A8BC3D2798B1FB0042DBB9 /* Assets.xcassets in Resources */,
+				4100A29228E244DD0076CFC5 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +383,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		4100A29428E244DD0076CFC5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4100A29328E244DD0076CFC5 /* de */,
+				4100A29528E244E10076CFC5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		416306BB27A6BC3000A92714 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
