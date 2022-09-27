@@ -16,23 +16,8 @@ struct ContentView: View {
     
     // MARK: - View
     var body: some View {
-        TabView {
             // MARK: - Schedule
-            ScheduleView()
-                .tabItem {
-                    Image(systemName: "calendar.day.timeline.leading")
-                    Text("SCHEDULE")
-                }
-                .navigationViewStyle(.stack)
-            
-            // MARK: - Settings
-            SettingsView()
-                .tabItem {
-                    Image(systemName: "gear")
-                    Text("SETTINGS")
-                }
-                .navigationViewStyle(.stack)
-        }
+        ScheduleView()
         // MARK: - Onboarding Sheet
         .sheet(isPresented: self.$settings.isOnboarded.not, content: {
             OnboardingView()

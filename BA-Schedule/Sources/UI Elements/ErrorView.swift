@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ErrorView: View {
     public var systemName: String
+    public var color: Color? = .primary
     public var title: LocalizedStringKey
     public var message: LocalizedStringKey
     
@@ -17,6 +18,7 @@ struct ErrorView: View {
             Image(systemName: systemName)
                 .font(.system(size: 46))
                 .symbolRenderingMode(.hierarchical)
+                .foregroundColor(color)
                 .padding()
             Text(title)
                 .font(.headline)

@@ -17,7 +17,12 @@ struct ScheduleView: View {
     @State private var isInitialLoading: Bool = true
     @State private var noNetwork: Bool = false
     
+    @State private var showCalendarSheet = false
+    @State private var showAboutThisApp = false
+    @State private var showLoginSheet = false
+    
     @EnvironmentObject var settings: Settings
+    @Environment(\.presentationMode) var presentationMode
     
     private var logger: Logger = Logger.init(for: "ScheduleView")
     
@@ -28,15 +33,55 @@ struct ScheduleView: View {
     var body: some View {
         NavigationView {
             ScheduleListView(studyDays: self.$studyDays, lastOnlineUpdate: self.settings.lastOnlineUpdate)
-            .navigationTitle("SCHEDULE")
-            .onAppear {
-                Task {
-                    await self.loadSchedule()
+                .navigationTitle("SCHEDULE")
+                .onAppear {
+                    Task {
+                        await self.loadSchedule()
+                    }
                 }
-            }
-            .refreshable {
-                await self.loadSchedule(forceUpdate: true)
-            }
+                .refreshable {
+                    await self.loadSchedule(forceUpdate: true)
+                }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Menu {
+                            Button {
+                                showCalendarSheet = true
+                            } label: {
+                                Label {
+                                    Text("CALENDAR_EXPORT_MENU")
+                                } icon: {
+                                    Image(systemName: "calendar.badge.plus")
+                                }
+                            }
+                            Divider()
+                            Button {
+                                UIApplication.shared.open(URL(string: "mailto:kontakt@jonasrichter.eu?subject=Vorschlag%20zu%20BA-Schedule")!)
+                            } label: {
+                                Label("SETTINGS.IDEAS.BUTTON", systemImage: "envelope")
+                            }
+                            Divider()
+                            Button {
+                                showLoginSheet = true
+                            } label: {
+                                Label("SETTINGS.USER.CHANGELOGIN", systemImage: "person.fill.and.arrow.left.and.arrow.right")
+                            }
+                            Button {
+                                showAboutThisApp = true
+                            } label: {
+                                Label {
+                                    Text("SETTINGS.ABOUT")
+                                } icon: {
+                                    Image(systemName: "questionmark.app")
+                                }
+                            }
+                            
+                        } label: {
+                            Label("SETTINGS.MOREFUNCTIONS.HEADER", systemImage: "ellipsis.circle")
+                        }
+                        
+                    }
+                }
         }
         .overlay(alignment: .center) {
             if isInitialLoading || !self.settings.isOnboarded {
@@ -54,6 +99,22 @@ struct ScheduleView: View {
                 }
             }
         }
+        .sheet(isPresented: $showCalendarSheet) {
+            if #available(iOS 16.0, *) {
+                ExportToCalendarView()
+                    .presentationDetents([.medium])
+                    .presentationDragIndicator(.visible)
+            } else {
+                ExportToCalendarView()
+            }
+        }
+        .sheet(isPresented: $showAboutThisApp) {
+            AboutView()
+        }
+        .sheet(isPresented: $showLoginSheet) {
+            LoginView()
+        }
+        .navigationViewStyle(.stack)
         
     }
     
@@ -122,5 +183,6 @@ struct ScheduleView_Previews: PreviewProvider {
     static var previews: some View {
         ScheduleView()
             .environmentObject(Settings())
+            .environment(\.locale, .init(identifier: "de"))
     }
 }

@@ -26,6 +26,8 @@
 "FEATURE_1_DESCR" = "Your schedule is easy, neat and available on the go.";
 "FEATURE_2_TITLE" = "Focused on privacy";
 "FEATURE_2_DESCR" = "The app was developed with privacy in mind.";
+"FEATURE_CALENDAR_EXPORT" = "Easy schedule export";
+"FEATURE_CALENDAR_EXPORT_DESCR" = "Export your schedule to your personal calendar.";
 
 // MARK: - Settings
 "SETTINGS.GITHUB-LINK" = "See the source code on GitHub";
@@ -39,10 +41,14 @@
 "SETTINGS.MOREFUNCTIONS.SHOWINSTRUCTUR" = "Show instructor";
 "SETTINGS.MOREFUNCTIONS.SHOWREMARKS" = "Show remarks";
 "SETTINGS.IDEAS" = "Ideas for more features?";
-"SETTINGS.IDEAS.BUTTON" = "Send proposal via email";
+"SETTINGS.IDEAS.BUTTON" = "Send feature proposal via email";
+
+// MARK: - About
+"ABOUT.THANKSTO" = "Thanks for helping out";
 
 // MARK: - Errors
 "ALERT_BUTTON_CANCEL" = "Cancel";
+"ERROR_ALERT" = "An error happend";
 
 // MARK: - General
 "GENERAL.UNKNOWN" = "Unknown";
@@ -52,3 +58,17 @@
 "GENERAL.CONTINUE" = "Continue";
 "GENERAL.NOCONNECTION.TITLE" = "No network connection";
 "GENERAL.NOCONNECTION.MESSAGE" = "Please check your network connection and try again later.";
+"GENERAL_MENU_MORE" = "More content";
+"GENERAL_CLOSE" = "Close";
+"GENERAL_FINISH" = "Finish";
+
+// MARK: - Calendar export
+"PERMISSON.CALENDAR.TITLE" = "Calendar access required";
+"PERMISSON.CALENDAR.DESCR" = "In order to transfer your timetable to your calendar, your consent is required. The timetable is created in a new calendar. **No** other dates will be read out.";
+"ERROR_NO_CALENDAR_ACCESS" = "Calendar access not possible";
+"ERROR_NO_CALENDAR_ACCESS_DESCR" = "Apparently, the app was not allowed sufficient permissions. To allow access to the calendar, please switch to the settings.";
+"ERROR_NO_CALENDAR_ACCESS_TO_SETTINGS" = "To the settings";
+"CALENDAR_EXPORT_SUCCESS" = "The calendar export was successfull";
+"CALENDAR_EXPORT_TITLE" = "Export schedule into your calendar";
+"CALENDAR_EXPORT_BUTTON" = "Export";
+"CALENDAR_EXPORT_MENU" = "Export schedule";

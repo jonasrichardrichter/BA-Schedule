@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  BA-Schedule
+
+  Created by Jonas Richard Richter on 26.09.22.
+  
+*/
+"NSCalendarsUsageDescription" = "BA-Schedule requires calendar access to export your timetable.";
