@@ -41,7 +41,10 @@ struct Lesson: View {
                             Text(lesson.instructor)
                         }
                     }
-                    if (!self.lesson.remarks.isEmpty && self.settings.showRemarks) {
+                    if (!self.lesson.remarks.isEmpty) {
+                        if self.sizeClass == .regular {
+                            Text("・")
+                        }
                         HStack {
                             Image(systemName: "info.circle")
                             Text(lesson.remarks)
