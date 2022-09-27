@@ -71,3 +71,6 @@
 "ERROR_NO_CALENDAR_ACCESS_DESCR" = "Anscheinend wurden der App nicht die ausreichenden Berechtigungen gestattet. Um den Zugriff auf den Kalendar zu erlauben, wechsle bitte in die Einstellungen.";
 "ERROR_NO_CALENDAR_ACCESS_TO_SETTINGS" = "Zu den Einstellungen";
 "CALENDAR_EXPORT_SUCCESS" = "Der Kalendar wurde erfolgreich exportiert";
+"CALENDAR_EXPORT_TITLE" = "Studenplan in den Kalendar exportieren";
+"CALENDAR_EXPORT_BUTTON" = "Exportieren";
+"CALENDAR_EXPORT_MENU" = "Stundenplan exportieren";

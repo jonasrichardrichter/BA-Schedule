@@ -33,7 +33,7 @@ struct ExportToCalendarView: View {
                     .scaledToFit()
                     .frame(height: 62)
                     .foregroundColor(.accentColor)
-                Text("Studenplan in den Kalendar exportieren")
+                Text("CALENDAR_EXPORT_TITLE")
                     .font(.largeTitle)
                     .bold()
                     .multilineTextAlignment(.center)
@@ -45,7 +45,7 @@ struct ExportToCalendarView: View {
                         await exportToCalendar()
                     }
                 } label: {
-                    Text("Exportieren")
+                    Text("CALENDAR_EXPORT_BUTTON")
                         .bold()
                         .frame(height: 32)
                         .frame(maxWidth: .infinity)

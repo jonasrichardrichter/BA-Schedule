@@ -49,7 +49,7 @@ struct ScheduleView: View {
                                 showCalendarSheet = true
                             } label: {
                                 Label {
-                                    Text("Stundenplan exportieren")
+                                    Text("CALENDAR_EXPORT_MENU")
                                 } icon: {
                                     Image(systemName: "calendar.badge.plus")
                                 }
