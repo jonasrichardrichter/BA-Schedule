@@ -14,9 +14,10 @@ This is a simple application to see your schedule from the Berufsakademie Sachse
 ## Screenshots
 
 <p float="left">
-<img src="https://user-images.githubusercontent.com/33372485/167118026-8b71b432-c685-4adc-a558-7250e92435ce.png" height="500">
-<img src="https://user-images.githubusercontent.com/33372485/167118045-f31b3acd-35b1-420c-a262-4d6f7b1f1a4c.png" height="500">
-<img src="https://user-images.githubusercontent.com/33372485/167118116-4dbfd541-3be4-4ebc-a8a1-af6a21f36874.png" height="500">
+<img src="https://user-images.githubusercontent.com/33372485/192479697-8d3b4e9d-0951-4362-88bc-969a2586081b.png" height="500">
+<img src="https://user-images.githubusercontent.com/33372485/192479720-f54d378b-bd2f-40ae-880e-b6a47f92f82d.png" height="500">
+<img src="https://user-images.githubusercontent.com/33372485/192479743-c9c98acc-2975-400a-8581-4734c869e689.png" height="500">
+<img src="https://user-images.githubusercontent.com/33372485/192479747-18e04da7-8cfa-4589-8a11-4dcd8af042f6.png" height="500">
 </p>
 
 ## Acknowledgments
