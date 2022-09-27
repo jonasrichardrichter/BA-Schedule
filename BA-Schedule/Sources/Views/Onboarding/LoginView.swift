@@ -12,6 +12,8 @@ struct LoginView: View {
     
     // MARK: - Properties
     
+    var callback: () -> ()?
+    
     @EnvironmentObject var settings: Settings
     @Environment(\.presentationMode) var presentationMode
     
@@ -114,6 +116,7 @@ struct LoginView: View {
             self.settings.username = username
             self.settings.hash = hash
             self.settings.isOnboarded = true
+            self.callback()
             self.presentationMode.wrappedValue.dismiss()
         }
     }
@@ -122,7 +125,9 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(callback: {
+            print("Logged In")
+        })
             .environmentObject(Settings())
     }
 }

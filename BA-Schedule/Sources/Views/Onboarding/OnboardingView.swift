@@ -41,7 +41,7 @@ struct OnboardingView: View {
                 //                    .padding(.horizontal)
                 //
                 NavigationLink(destination: {
-                    LoginView()
+                    LoginView(callback: {})
                         .navigationBarTitleDisplayMode(.inline)
                 }, label: {
                     HStack {

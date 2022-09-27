@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4100A29228E244DD0076CFC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4100A29428E244DD0076CFC5 /* InfoPlist.strings */; };
 		4108E52228B614960037BA44 /* NoCalendarPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108E52128B614960037BA44 /* NoCalendarPermissionView.swift */; };
+		4111289428E32D8D0024EFF3 /* Binding+didSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4111289328E32D8D0024EFF3 /* Binding+didSet.swift */; };
 		4111ED0427B4451A00C7FF8D /* Binding+not.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4111ED0327B4451900C7FF8D /* Binding+not.swift */; };
 		4129F38C2798B81100A46155 /* Logger+CustomInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129F38B2798B81100A46155 /* Logger+CustomInit.swift */; };
 		4135B66628B414110008D573 /* ExportToCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4135B66528B414110008D573 /* ExportToCalendarView.swift */; };
@@ -42,6 +43,7 @@
 		4100A29328E244DD0076CFC5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4100A29528E244E10076CFC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4108E52128B614960037BA44 /* NoCalendarPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCalendarPermissionView.swift; sourceTree = "<group>"; };
+		4111289328E32D8D0024EFF3 /* Binding+didSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+didSet.swift"; sourceTree = "<group>"; };
 		4111ED0327B4451900C7FF8D /* Binding+not.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+not.swift"; sourceTree = "<group>"; };
 		4129F38B2798B81100A46155 /* Logger+CustomInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+CustomInit.swift"; sourceTree = "<group>"; };
 		412FB47C27B57D8900660427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				4129F38B2798B81100A46155 /* Logger+CustomInit.swift */,
 				416306CC27A6DC7100A92714 /* URL+BA-Schedule.swift */,
 				4111ED0327B4451900C7FF8D /* Binding+not.swift */,
+				4111289328E32D8D0024EFF3 /* Binding+didSet.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				4154BA26281969CA00907AD5 /* ScheduleListView.swift in Sources */,
 				41A437F327A6FEE700D0D43B /* AboutView.swift in Sources */,
 				415FEC0B281FE62000D74DE9 /* ErrorView.swift in Sources */,
+				4111289428E32D8D0024EFF3 /* Binding+didSet.swift in Sources */,
 				416306C627A6C25500A92714 /* Feature.swift in Sources */,
 				416306CD27A6DC7100A92714 /* URL+BA-Schedule.swift in Sources */,
 				41C1556428B3D63F00977721 /* GrantCalendarPermissionView.swift in Sources */,

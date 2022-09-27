@@ -8,6 +8,7 @@
 import SwiftUI
 import CampusDualKit
 import Logging
+import Combine
 
 struct ScheduleView: View {
     
@@ -27,6 +28,8 @@ struct ScheduleView: View {
     private var logger: Logger = Logger.init(for: "ScheduleView")
     
     var service: ServiceWrapper = ServiceWrapper()
+    
+    @State var cancellable: AnyCancellable? = nil
     
     // MARK: - Views
     
@@ -112,7 +115,11 @@ struct ScheduleView: View {
             AboutView()
         }
         .sheet(isPresented: $showLoginSheet) {
-            LoginView()
+            LoginView(callback: {
+                Task {
+                    await self.loadSchedule(forceUpdate: true)
+                }
+            })
         }
         .navigationViewStyle(.stack)
         
@@ -124,6 +131,14 @@ struct ScheduleView: View {
         // Check if user is onboarded
         guard settings.isOnboarded == true else {
             self.logger.debug("User is not onboarded. No data is loaded.")
+            
+            cancellable = self.settings.$isOnboarded.sink() { value in
+                if value == true {
+                    Task {
+                        await self.loadSchedule(forceUpdate: true)
+                    }
+                }
+            }
             return
         }
         
